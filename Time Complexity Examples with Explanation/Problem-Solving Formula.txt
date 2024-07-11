@@ -1,0 +1,101 @@
+Problem-Solving Formula
+
+1. Understand the Problem
+
+Read the Problem Statement Carefully: Make sure you understand what is being asked.
+Identify Inputs and Outputs: Determine what inputs you will receive and what outputs are expected.
+Clarify Requirements: Ensure you understand any constraints and special requirements.
+
+2. Plan Your Approach
+
+Break Down the Problem: Divide the problem into smaller, manageable parts.
+Identify Key Concepts: Determine which data structures and algorithms might be useful.
+Develop a Strategy: Outline the steps needed to solve the problem.
+
+3. Write Pseudocode
+
+Outline Your Logic: Write pseudocode or a high-level description of your solution.
+Ensure Clarity: Make sure each step is clear and logical.
+
+4. Implement the Solution
+
+Write the Code: Translate your pseudocode into actual code.
+Follow Best Practices: Use meaningful variable names, proper indentation, and comments where necessary.
+
+5. Test Your Solution
+
+Create Test Cases: Design test cases to cover different scenarios, including edge cases.
+Run Your Tests: Execute your test cases and verify that your code produces the correct results.
+Debug if Necessary: If there are errors, use debugging techniques to find and fix the issues.
+
+6. Optimize Your Solution
+
+Analyze Complexity: Evaluate the time and space complexity of your solution.
+Improve Efficiency: Look for ways to optimize your code if it is not efficient enough.
+
+7. Review and Refactor
+
+Review Your Code: Make sure your code is clean, readable, and follows best practices.
+Refactor if Necessary: Improve your code structure without changing its functionality.
+
+EXAMPLE WALKTHROUGH
+
+Let's apply this formula to a simple example problem:
+
+Problem: Given an array of integers, return the indices of the two numbers that add up to a specific target.
+
+1. Understand the Problem
+
+Inputs: An array of integers and a target integer.
+Outputs: Indices of the two numbers that add up to the target.
+Constraints: Each input would have exactly one solution, and you may not use the same element twice.
+
+2. Plan Your Approach
+
+Break Down the Problem: We need to find two numbers in the array that sum up to the target.
+Identify Key Concepts: Use a hash map to store the indices of the numbers we have seen so far.
+Develop a Strategy: For each number in the array, check if the complement (target - current number) exists in the hash map. If it does, return the indices.
+
+3. Write Pseudocode
+
+Initialize an empty hash map
+Iterate over each number in the array with its index
+    Calculate the complement (target - current number)
+    If the complement is in the hash map
+        Return the current index and the index of the complement
+    Otherwise, add the current number and its index to the hash map
+
+4. Implement the Solution
+
+public int[] twoSum(int[] nums, int target) {
+    Map<Integer, Integer> map = new HashMap<>();
+    for (int i = 0; i < nums.length; i++) {
+        int complement = target - nums[i];
+        if (map.containsKey(complement)) {
+            return new int[] { map.get(complement), i };
+        }
+        map.put(nums[i], i);
+    }
+    throw new IllegalArgumentException("No two sum solution");
+}
+
+5. Test Your Solution
+
+Create Test Cases:
+twoSum([2, 7, 11, 15], 9) should return [0, 1]
+twoSum([3, 2, 4], 6) should return [1, 2]
+twoSum([3, 3], 6) should return [0, 1]
+Run Your Tests: Ensure all test cases pass.
+Debug if Necessary: If a test fails, use debugging tools to find and fix the issue.
+
+6. Optimize Your Solution
+
+Analyze Complexity: The solution runs in O(n) time and uses O(n) space.
+Improve Efficiency: This solution is already optimal for this problem.
+
+7. Review and Refactor
+
+Review Your Code: Ensure the code is clear and follows best practices.
+Refactor if Necessary: No refactoring needed in this case.
+
+By following this structured approach, you can systematically tackle coding problems and improve your problem-solving skills over time.

@@ -1,0 +1,5 @@
+Let's start by analyzing the first part of the function, which is a single loop iterating through the array. Inside the loop, we have a constant-time operation denoted as O(1). This means that each individual operation inside the loop takes the same amount of time regardless of the size of the input array. However, since the loop runs n times (where n is the number of elements in the array), the overall time complexity for this part is O(n).
+
+Next, we have a nested loop. The outer loop iterates through the entire array, and inside the outer loop, there is another loop that iterates through the entire array as well. Inside both loops, there is a basic operation that takes constant time, O(1). This means that each iteration of the inner loop takes the same amount of time, but since the inner loop runs n times for each of the n iterations of the outer loop, the total time complexity is O(n^2).
+
+Therefore, the overall time complexity of the function is O(n) + O(n^2), which simplifies to O(n^2) as the dominant term. This means that the function has a quadratic time complexity, which grows quadratically with the size of the input array.

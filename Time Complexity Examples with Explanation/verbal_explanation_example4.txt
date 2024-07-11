@@ -1,0 +1,9 @@
+This function takes a single integer input a and performs two separate loops. Let's analyze the time complexity step by step.
+
+First, we initialize sum to 0. Then, we enter the first loop, which runs from 0 to a - 1. Inside this loop, there is a simple operation where we update sum by adding a three times. Each iteration of this loop is a constant-time operation, and since the loop runs a times, the time complexity for this part is O(a).
+
+Next, we initialize a new variable b to 10. We then enter the second loop, which runs from 0 to 9, iterating exactly 10 times. Inside this loop, we again perform a constant-time operation where we update sum by adding b three times. Since this loop runs a fixed number of times (10), regardless of the input a, its time complexity is O(1).
+
+To determine the overall time complexity of the function, we combine the complexities of both loops. The first loop's complexity is O(a), and the second loop's complexity is O(1). When combining these, the dominant term is O(a), because O(a) grows with the input a, while O(1) remains constant.
+
+Therefore, the overall time complexity of the function is O(a). The contribution from the second loop is constant and does not affect the linear complexity determined by the first loop. This means that as the input a increases, the running time of the function will increase linearly with a.

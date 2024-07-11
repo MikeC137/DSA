@@ -1,0 +1,11 @@
+Initially, there are three constant-time operations: setting integer variables a, b, and c to 5, 10, and 50 respectively, each of which is O(1).
+
+Then we have a loop that iterates n times, where n is the value of the input parameter. Inside this loop, there are three operations, each adding a constant value to the loop index i. Each of these operations is O(1), but since they are executed n times, their combined complexity within the loop is O(3n). 
+
+Next, there is another loop that also iterates n times. Inside this loop, there are two operations, each multiplying the loop index j by 2. Each operation is O(1), and their combined complexity within the loop is O(2n). 
+
+Finally, there is another constant-time operation where a string variable whoAmI is set to "I don't know," which is O(1).
+
+Summing these up, the total time complexity is O(1) + O(1) + O(1) + O(3n) + O(2n) + O(1), which simplifies to O(4 + 5n) or simply O(n) since the linear term dominates. 
+
+Therefore, the function scales linearly with the size of the input.

@@ -1,0 +1,5 @@
+Initially, there are two constant-time operations, setting an integer variable a to 10 and then updating it to 53, both of which are O(1). 
+
+Next, we have a loop that iterates n times, where n is the length of the input array. Inside this loop, there are three operations: calling anotherFunction, which is a constant-time operation O(1), declaring a boolean variable stranger, another O(1) operation, and incrementing a, which is also O(1). Since each of these operations is performed n times, their combined complexity inside the loop is O(4n). 
+
+Finally, there is a return statement that is a constant-time operation O(1). Adding these up, the total time complexity is O(1) + O(1) + O(4n) + O(1), which simplifies to O(n) because the linear term dominates. This means that the function scales linearly with the size of the input array.

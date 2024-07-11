@@ -1,0 +1,12 @@
+We have a function called "printPairs" which accepts an array of integers.
+First thing we see in the function is the declaration and initialization
+of an integer variable called "n". The assigned value of variable "n" is
+the length of the array. 
+
+Next, we have a nested for loop. The outer loop runs from 0 to the length
+of the array. The inner loop runs from 0 to the length of the array as 
+well. Inside the inner loop we have a print statement which takes O(1) 
+constant time. The time complexity of this function is O(n^2) because the
+inner loop will run n times for each iteration of the outer loop, where n
+is the length of the array. Therefore, as the input size increases the 
+time complexity of the function increases quadratically.

@@ -1,0 +1,21 @@
+First, we have a function called "sortAndPrint" 
+which accepts the integer of an array. The 
+first thing we see in the function is the use of 
+the sort method from the Arrays class. The sorting
+of the array takes O(nlogn) because the underlying
+sorting algorithm offers O(nlogn) performance on
+all data sets.
+
+Next, we have a for loop that runs from 0 to
+the length of the array. Inside the for loop,
+there is a conditional statement that checks
+if the current element is the first element 
+of the array or if the current element is equal
+to the previous element. Finally, we have a 
+print statement inside the conditional statement
+that will display the current element if the 
+conditions are met.
+
+Therefore, the time complexity of this function
+is O(nlogn) because it's the highest complexity
+within the function.
