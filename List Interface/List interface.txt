@@ -1,0 +1,11 @@
+What is the List interface in Java Collections Framework?
+
+The List interface in Java is part of the Java Collections Framework and represents an ordered collection (also known as 
+a sequence). Here are some key points about the List interface:
+
+1. Order: Elements in a list are ordered and can be accessed by their index, with the first element at index 0.
+
+2. Duplicates: A List can contain duplicate elements, meaning the same element can appear more than once in the list.
+
+3. Implementation Classes: There are several classes that implement the List interface, including ArrayList, LinkedList, 
+Vector, and Stack.
