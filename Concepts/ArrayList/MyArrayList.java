@@ -42,7 +42,7 @@ public class MyArrayList<E> implements MyList<E> {
 
     @Override
     public void add(int index, E element) {
-        if (!(isIndexValid(index))) {
+        if (!(isAddIndexValid(index))) {
             throw new IndexOutOfBoundsException("Index is out of bounds: " + index);
         }
         if (isFull()) {
@@ -55,12 +55,16 @@ public class MyArrayList<E> implements MyList<E> {
 
     private void shiftRight(int index) {
         for (int i = size; i > index; i--) {
-            data[i] = data[i--]; // Size = 10, index = 6, data[10] = data[9]
+            data[i] = data[i - 1]; // Size = 10, index = 6, data[10] = data[9]
         }
     }
 
+    private boolean isAddIndexValid(int index) {
+        return index >= 0 && index <= size;
+    }
+
     private boolean isIndexValid(int index) {
-        return !(index < 0 || index >= size);
+        return index >= 0 && index < size;
     }
 
     @Override
@@ -76,7 +80,7 @@ public class MyArrayList<E> implements MyList<E> {
 
     private void shiftLeft(int index) {
         for (int i = index; index < size - 1; i++) {
-            data[i] = data[i++]; // Size = 10, index = 5, data[5] = data[6]
+            data[i] = data[i + 1]; // Size = 10, index = 5, data[5] = data[6]
         }
     }
 
