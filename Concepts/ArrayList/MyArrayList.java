@@ -42,14 +42,42 @@ public class MyArrayList<E> implements MyList<E> {
 
     @Override
     public void add(int index, E element) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+        if (!(isIndexValid(index))) {
+            throw new IndexOutOfBoundsException("Index is out of bounds: " + index);
+        }
+        if (isFull()) {
+            grow();
+        }
+        shiftRight(index);
+        data[size] = element;
+        size++;
+    }
+
+    private void shiftRight(int index) {
+        for (int i = size; i > index; i--) {
+            data[i] = data[i--]; // Size = 10, index = 6, data[10] = data[9]
+        }
+    }
+
+    private boolean isIndexValid(int index) {
+        return !(index < 0 || index >= size);
     }
 
     @Override
     public E remove(int index) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+        if (!(isIndexValid(index))) {
+            throw new IndexOutOfBoundsException("Index is out of bounds: " + index);
+        }
+        E removedElement = data[index];
+        data[size--] = null;
+        size--;
+        return removedElement;
+    }
+
+    private void shiftLeft(int index) {
+        for (int i = index; index < size - 1; i++) {
+            data[i] = data[i++]; // Size = 10, index = 5, data[5] = data[6]
+        }
     }
 
     @Override
