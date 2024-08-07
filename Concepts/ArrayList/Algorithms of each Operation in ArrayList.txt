@@ -1,0 +1,96 @@
+ALGORITHMS OF EACH OPERATION IN ARRAYLIST
+
+1. void add(E e) : 
+   a. Check if the array is full. If it is full, then increase the size of the array.
+   b. Add the element at the end of the array.
+   c. Increment the size of the array.
+   TIME COMPLEXITY: O(1) - If the array is not full, O(n) - If the array is full.
+   AMORTIZED TIME COMPLEXITY: O(1) over a series of add operations if the array size grows geometrically (e.g., doubling).
+
+2. void add(int index, E element) : 
+   a. Check if the index is valid or not (index out of bounds).
+   b. Check if the array is full. If it is full, then increase the size of the array.
+   c. Shift all the elements to the right from the given index.
+   d. Add the element at the given index.
+   e. Increment the size of the array.
+   TIME COMPLEXITY: O(n) due to the need to shift elements.
+   AMORTIZED TIME COMPLEXITY: O(n) due to shifting, though the resizing part is O(1) amortized over many operations.
+
+3. E remove(int index) :
+   a. Check if the index is valid or not (index out of bounds).
+   b. Store the element that will be removed from the list.
+   c. Shift all the elements to the left from the given index.
+   d. Set the last element to null.
+   e. Decrement the size of the array.
+   f. Return the element which was removed.
+   TIME COMPLEXITY: O(n) due to the need to shift elements.
+
+4. boolean remove(Object o) :
+   a. Find the index of the given element.
+   b. If the element is found, then remove it.
+   c. Shift all the elements to the left from the given index.
+   d. Decrement the size of the array.
+   e. Return true if the element is removed, otherwise return false.
+   TIME COMPLEXITY: O(n) due to the need to find the element and then shift elements.
+
+5. E get(int index) :
+   a. Check if the index is valid or not (index out of bounds).
+   b. Return the element at the given index.
+   TIME COMPLEXITY: O(1)
+
+6. E set(int index, E element) :
+   a. Check if the index is valid or not (index out of bounds).
+   b. Store the element at the specified index.
+   c. Replace the element at the specified index
+   d. Return the element which was replaced.
+   TIME COMPLEXITY: O(1)
+
+7. int indexOf(Object o) :
+   a. Iterate through the array and check if the current element is equal to the specified element.
+   b. Return the index of the element if found, otherwise return -1.
+   TIME COMPLEXITY: O(n)
+
+8. int lastIndexOf(Object o) :
+   a. Iterate through the array in reverse order and check if the current element is equal to the specified element.
+   b. Return the index of the element if found, otherwise return -1.
+   TIME COMPLEXITY: O(n)
+
+9. void clear() :
+   a. Set all the elements to null.
+   b. Set the size of the array to 0.
+   TIME COMPLEXITY: O(n)
+
+10. void grow() :
+	a. Create a new array with double the size of the current array.
+	b. Copy all the elements from the current array to the new array.
+	c. Set the new array as the current array.
+	TIME COMPLEXITY: O(n)
+
+11. int size() :
+	a. Return the size of the array.
+	TIME COMPLEXITY: O(1)
+
+12. boolean isEmpty() :
+	a. Check if the size of the array is 0 or not.
+	b. Return true if the size is 0, otherwise return false.
+	TIME COMPLEXITY: O(1)
+
+13. boolean isFull() :
+	a. Check if the size of the array is equal to the capacity of the array.
+	b. Return true if the size is equal to the capacity, otherwise return false.
+	TIME COMPLEXITY: O(1)
+
+14. boolean contains(Object o) :
+	a. Iterate through the array and check if the current element is equal to the specified element.
+	b. Return true if the element is found, otherwise return false.
+	* Use the indexOf method to check if the element is present in the list. *
+	TIME COMPLEXITY: O(n)
+
+15. boolean equals(Object o) :
+	a. Check if the object is the same as the list.
+	b. Check if the object is an instance of the list.
+	c. If the object is an instance of the list, then cast it to the list.
+	d. Check if the size of the list is equal to the size of the object.
+	e. Iterate through the list and check if each element is equal to the corresponding element in the object.
+	f. Return true if all the elements are equal, otherwise return false.
+	TIME COMPLEXITY: O(n)
