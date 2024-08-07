@@ -2,7 +2,7 @@ import java.util.Iterator;
 
 public interface MyList<E> extends Iterable<E> {
 
-    public boolean add(E element);
+    public void add(E element);
 
     public void add(int index, E element);
 

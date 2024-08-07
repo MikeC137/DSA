@@ -9,6 +9,7 @@ public class MyArrayList<E> implements MyList<E> {
         this(INITIAL_CAPACITY);
     }
 
+    @SuppressWarnings("unchecked")
     public MyArrayList(int initialCapacity) {
         if (initialCapacity < 0) {
             throw new IllegalArgumentException("Invalid initial capacity: " + initialCapacity);
@@ -17,10 +18,26 @@ public class MyArrayList<E> implements MyList<E> {
         size = 0;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
-    public boolean add(E element) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+    public void add(E element) {
+        if (isFull()) {
+            grow();
+        }
+        data[size] = element;
+        size++;
+    }
+
+    private boolean isFull() {
+        return size == data.length;
+    }
+
+    private void grow() {
+        E[] newData = (E[]) new Object[data.length * 2];
+        for (int i = 0; i < data.length; i++) {
+            newData[i] = data[i];
+        }
+        data = newData;
     }
 
     @Override
