@@ -28,18 +28,6 @@ public class MyArrayList<E> implements MyList<E> {
         size++;
     }
 
-    private boolean isFull() {
-        return size == data.length;
-    }
-
-    private void grow() {
-        E[] newData = (E[]) new Object[data.length * 2];
-        for (int i = 0; i < data.length; i++) {
-            newData[i] = data[i];
-        }
-        data = newData;
-    }
-
     @Override
     public void add(int index, E element) {
         if (!(isAddIndexValid(index))) {
@@ -53,20 +41,6 @@ public class MyArrayList<E> implements MyList<E> {
         size++;
     }
 
-    private void shiftRight(int index) {
-        for (int i = size; i > index; i--) {
-            data[i] = data[i - 1]; // Size = 10, index = 6, data[10] = data[9]
-        }
-    }
-
-    private boolean isAddIndexValid(int index) {
-        return index >= 0 && index <= size;
-    }
-
-    private boolean isIndexValid(int index) {
-        return index >= 0 && index < size;
-    }
-
     @Override
     public E remove(int index) {
         if (!(isIndexValid(index))) {
@@ -78,16 +52,56 @@ public class MyArrayList<E> implements MyList<E> {
         return removedElement;
     }
 
+    @Override
+    public boolean remove(E element) {
+        int index = indexOf(element);
+        if (index == -1) {
+            return false;
+        }
+        remove(index);
+        return true;
+    }
+
+    @Override
+    public int indexOf(E element) {
+        for (int i = 0; i < size; i++) {
+            if (data[i].equals(element)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    private boolean isFull() {
+        return size == data.length;
+    }
+
+    private void grow() {
+        E[] newData = (E[]) new Object[data.length * 2];
+        for (int i = 0; i < data.length; i++) {
+            newData[i] = data[i];
+        }
+        data = newData;
+    }
+
+    private boolean isAddIndexValid(int index) {
+        return index >= 0 && index <= size;
+    }
+
+    private boolean isIndexValid(int index) {
+        return index >= 0 && index < size;
+    }
+
+    private void shiftRight(int index) {
+        for (int i = size; i > index; i--) {
+            data[i] = data[i - 1]; // Size = 10, index = 6, data[10] = data[9]
+        }
+    }
+
     private void shiftLeft(int index) {
         for (int i = index; index < size - 1; i++) {
             data[i] = data[i + 1]; // Size = 10, index = 5, data[5] = data[6]
         }
-    }
-
-    @Override
-    public boolean remove(E element) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'remove'");
     }
 
     @Override
@@ -106,12 +120,6 @@ public class MyArrayList<E> implements MyList<E> {
     public boolean contains(E element) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'contains'");
-    }
-
-    @Override
-    public int indexOf(E element) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'indexOf'");
     }
 
     @Override
