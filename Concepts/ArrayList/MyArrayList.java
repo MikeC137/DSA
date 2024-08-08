@@ -72,6 +72,24 @@ public class MyArrayList<E> implements MyList<E> {
         return -1;
     }
 
+    @Override
+    public E get(int index) {
+        if (!(isIndexValid(index))) {
+            throw new IndexOutOfBoundsException("Index is out of bounds: " + index);
+        }
+        return data[index];
+    }
+
+    @Override
+    public E set(int index, E element) {
+        if (!(isIndexValid(index))) {
+            throw new IndexOutOfBoundsException("Index is out of bounds: " + index);
+        }
+        E replacedElement = data[index];
+        data[index] = element;
+        return replacedElement;
+    }
+
     private boolean isFull() {
         return size == data.length;
     }
@@ -102,18 +120,6 @@ public class MyArrayList<E> implements MyList<E> {
         for (int i = index; index < size - 1; i++) {
             data[i] = data[i + 1]; // Size = 10, index = 5, data[5] = data[6]
         }
-    }
-
-    @Override
-    public E set(int index, E element) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'set'");
-    }
-
-    @Override
-    public E get(int index) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
     }
 
     @Override
