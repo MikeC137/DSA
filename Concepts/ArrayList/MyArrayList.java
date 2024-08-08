@@ -90,6 +90,16 @@ public class MyArrayList<E> implements MyList<E> {
         return replacedElement;
     }
 
+    @Override
+    public int lastIndexOf(E element) {
+        for (int i = size - 1; i > 0; i--) {
+            if (data[i].equals(element)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     private boolean isFull() {
         return size == data.length;
     }
@@ -126,12 +136,6 @@ public class MyArrayList<E> implements MyList<E> {
     public boolean contains(E element) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'contains'");
-    }
-
-    @Override
-    public int lastIndexOf(E element) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'lastIndexOf'");
     }
 
     @Override
