@@ -161,10 +161,13 @@ public class MyArrayList<E> implements MyList<E> {
             return "[]";
         }
         StringBuilder sb = new StringBuilder("[");
-        for (int i = 0; i < data.length; i++) {
-            sb.append(data[i]).append(", ");
+        for (int i = 0; i < size; i++) {
+            sb.append(data[i]);
+            if (i < size - 1) {
+                sb.append(", ");
+            }
         }
-        sb.append(data[size - 1]).append("]");
+        sb.append("]");
         return sb.toString();
     }
 
