@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class MyArrayList<E> implements MyList<E> {
     private static final int INITIAL_CAPACITY = 10;
@@ -157,8 +158,28 @@ public class MyArrayList<E> implements MyList<E> {
 
     @Override
     public Iterator<E> iterator() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'iterator'");
+        return new MyArrayListIterator();
     }
 
+    private class MyArrayListIterator implements Iterator<E> {
+        private int position;
+
+        public MyArrayListIterator() {
+            position = 0;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return position < size;
+        }
+
+        @Override
+        public E next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException();
+            }
+            return data[position++];
+        }
+
+    }
 }
