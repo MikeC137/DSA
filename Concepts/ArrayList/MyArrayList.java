@@ -47,8 +47,8 @@ public class MyArrayList<E> implements MyList<E> {
             throw new IndexOutOfBoundsException("Index is out of bounds: " + index);
         }
         E removedElement = data[index];
+        shiftLeft(index);
         data[size--] = null;
-        size--;
         return removedElement;
     }
 
@@ -105,7 +105,7 @@ public class MyArrayList<E> implements MyList<E> {
     }
 
     private void grow() {
-        E[] newData = (E[]) new Object[data.length * 2];
+        E[] newData = (E[]) new Object[(data.length * 2)];
         for (int i = 0; i < data.length; i++) {
             newData[i] = data[i];
         }
