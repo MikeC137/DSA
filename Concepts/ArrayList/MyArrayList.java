@@ -156,6 +156,18 @@ public class MyArrayList<E> implements MyList<E> {
         size = 0;
     }
 
+    public String toString() {
+        if (isEmpty()) {
+            return "[]";
+        }
+        StringBuilder sb = new StringBuilder("[");
+        for (int i = 0; i < data.length; i++) {
+            sb.append(data[i]).append(", ");
+        }
+        sb.append(data[size - 1]).append("]");
+        return sb.toString();
+    }
+
     @Override
     public Iterator<E> iterator() {
         return new MyArrayListIterator();
