@@ -30,20 +30,20 @@ public class MyArrayList<E> implements MyList<E> {
 
     @Override
     public void add(int index, E element) {
-        if (!(isAddIndexValid(index))) {
+        if (!(isIndexValid(index, true))) {
             throw new IndexOutOfBoundsException("Index is out of bounds: " + index);
         }
         if (isFull()) {
             grow();
         }
         shiftRight(index);
-        data[size] = element;
+        data[index] = element;
         size++;
     }
 
     @Override
     public E remove(int index) {
-        if (!(isIndexValid(index))) {
+        if (!(isIndexValid(index, false))) {
             throw new IndexOutOfBoundsException("Index is out of bounds: " + index);
         }
         E removedElement = data[index];
@@ -74,7 +74,7 @@ public class MyArrayList<E> implements MyList<E> {
 
     @Override
     public E get(int index) {
-        if (!(isIndexValid(index))) {
+        if (!(isIndexValid(index, false))) {
             throw new IndexOutOfBoundsException("Index is out of bounds: " + index);
         }
         return data[index];
@@ -82,7 +82,7 @@ public class MyArrayList<E> implements MyList<E> {
 
     @Override
     public E set(int index, E element) {
-        if (!(isIndexValid(index))) {
+        if (!(isIndexValid(index, false))) {
             throw new IndexOutOfBoundsException("Index is out of bounds: " + index);
         }
         E replacedElement = data[index];
@@ -112,12 +112,12 @@ public class MyArrayList<E> implements MyList<E> {
         data = newData;
     }
 
-    private boolean isAddIndexValid(int index) {
-        return index >= 0 && index <= size;
-    }
-
-    private boolean isIndexValid(int index) {
-        return index >= 0 && index < size;
+    private boolean isIndexValid(int index, boolean forAdd) {
+        if (forAdd) {
+            return index >= 0 && index <= size;
+        } else {
+            return index >= 0 && index < size;
+        }
     }
 
     private void shiftRight(int index) {
