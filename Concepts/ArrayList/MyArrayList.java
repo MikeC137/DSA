@@ -49,7 +49,7 @@ public class MyArrayList<E> implements MyList<E> {
         }
         E removedElement = data[index];
         shiftLeft(index);
-        data[size--] = null;
+        data[--size] = null;
         return removedElement;
     }
 
@@ -128,7 +128,7 @@ public class MyArrayList<E> implements MyList<E> {
     }
 
     private void shiftLeft(int index) {
-        for (int i = index; index < size - 1; i++) {
+        for (int i = index; i < size - 1; i++) {
             data[i] = data[i + 1]; // Size = 10, index = 5, data[5] = data[6]
         }
     }
