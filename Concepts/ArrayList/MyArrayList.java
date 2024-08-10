@@ -134,8 +134,7 @@ public class MyArrayList<E> implements MyList<E> {
 
     @Override
     public boolean contains(E element) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'contains'");
+        return indexOf(element) != -1;
     }
 
     @Override
