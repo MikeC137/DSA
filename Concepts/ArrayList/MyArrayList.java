@@ -92,8 +92,31 @@ public class MyArrayList<E> implements MyList<E> {
     }
 
     @Override
+    public boolean contains(E element) {
+        return indexOf(element) != -1;
+    }
+
+    @Override
+    public int size() {
+        return size;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    @Override
+    public void clear() {
+        for (int i = 0; i < data.length; i++) {
+            data[i] = null;
+        }
+        size = 0;
+    }
+
+    @Override
     public int lastIndexOf(E element) {
-        for (int i = size - 1; i > 0; i--) {
+        for (int i = size - 1; i >= 0; i--) {
             if (data[i].equals(element)) {
                 return i;
             }
@@ -131,29 +154,6 @@ public class MyArrayList<E> implements MyList<E> {
         for (int i = index; i < size - 1; i++) {
             data[i] = data[i + 1]; // Size = 10, index = 5, data[5] = data[6]
         }
-    }
-
-    @Override
-    public boolean contains(E element) {
-        return indexOf(element) != -1;
-    }
-
-    @Override
-    public int size() {
-        return size;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return size == 0;
-    }
-
-    @Override
-    public void clear() {
-        for (int i = 0; i < data.length; i++) {
-            data[i] = null;
-        }
-        size = 0;
     }
 
     public String toString() {
