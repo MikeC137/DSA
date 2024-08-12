@@ -47,7 +47,10 @@ public class App {
 
         // lastIndexOf (E element)
         System.out.println(arrayList.lastIndexOf(77));
-        System.out.println(arrayList);
+
+        // indexOf (E e)
+        System.out.println(arrayList.indexOf(3));
+        System.out.println(arrayList.indexOf(77));
 
         // clear()
         arrayList.clear();
