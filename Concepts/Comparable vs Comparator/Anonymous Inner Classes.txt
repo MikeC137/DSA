@@ -1,0 +1,7 @@
+Anonymous Inner Class
+
+An anonymous inner class in Java is a type of inner class without a name, which is declared and
+instantiated all at once. It's typically used when you need to create a one-time-use object of
+a class, often as an implementation of an interface or an extension of an abstract class. 
+Since it doesn't have a name, you can't create another instance of it; it is designed to be 
+used in a single place in your code.
