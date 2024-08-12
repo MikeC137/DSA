@@ -1,0 +1,108 @@
+ALGORITHMS OF EACH OPERATION IN LINKEDLIST
+
+1. void addFirst(E e) : 
+   a. Create a new node with the given element.
+   b. Set the next reference of the new node to the current head.
+   c. Set the head to the new node.
+   d. Increment the size of the linked list.
+   TIME COMPLEXITY: O(1)
+
+2. void addLast(E e) :
+   a. Create a new node with the given element.
+   b. If the linked list is empty, set the head to the new node.
+   c. Otherwise, traverse the linked list to the last node.
+   d. Set the next reference of the last node to the new node.
+   e. Increment the size of the linked list.
+   TIME COMPLEXITY: O(n)
+
+3. void add(int index, E e) :
+   a. If the index is less than 0 or greater than the size of the linked list, throw an IndexOutOfBoundsException.
+   b. If the index is 0, call addFirst(e).
+   c. Otherwise, traverse the linked list to the node at index - 1.
+   d. Create a new node with the given element.
+   e. Set the next reference of the new node to the next reference of the current node.
+   f. Set the next reference of the current node to the new node.
+   g. Increment the size of the linked list.
+   TIME COMPLEXITY: O(n)
+
+4. E removeFirst() :
+   a. If the linked list is empty, throw a NoSuchElementException.
+   b. Store the element of the current head node.
+   c. Set the head to the next node of the current head.
+   d. Decrement the size of the linked list.
+   e. Return the stored element.
+   TIME COMPLEXITY: O(1)
+
+5. E removeLast() :
+   a. If the linked list is empty, throw a NoSuchElementException.
+   b. If the linked list has only one node, call removeFirst().
+   c. Otherwise, traverse the linked list to the second last node.
+   d. Store the element of the last node.
+   e. Set the next reference of the second last node to null.
+   f. Decrement the size of the linked list.
+   g. Return the stored element.
+   TIME COMPLEXITY: O(n)
+
+6. E remove(int index) :
+   a. If the index is less than 0 or greater than or equal to the size of the linked list, throw an IndexOutOfBoundsException.
+   b. If the index is 0, call removeFirst().
+   c. Otherwise, traverse the linked list to the node at index - 1.
+   d. Store the element of the node at index.
+   e. Set the next reference of the current node to the next reference of the node at index.
+   f. Decrement the size of the linked list.
+   g. Return the stored element.
+   TIME COMPLEXITY: O(n)
+
+7. boolean remove(Object o) :
+   a. If the linked list is empty, return false.
+   b. If the element to be removed is the head element, call removeFirst().
+   c. Otherwise, traverse the linked list to find the node containing the element.
+   d. If the element is found, set the next reference of the previous node to the next reference of the current node.
+   e. Decrement the size of the linked list.
+   f. Return true if the element is found and removed, false otherwise.
+   TIME COMPLEXITY: O(n)
+
+8. E getFirst() :
+   a. If the linked list is empty, throw a NoSuchElementException.
+   b. Return the element of the head node.
+   TIME COMPLEXITY: O(1)
+
+9. E getLast() :
+   a. If the linked list is empty, throw a NoSuchElementException.
+   b. Traverse the linked list to the last node.
+   c. Return the element of the last node.
+   TIME COMPLEXITY: O(n)
+
+10. E get(int index) :
+   a. If the index is less than 0 or greater than or equal to the size of the linked list, throw an IndexOutOfBoundsException.
+   b. Traverse the linked list to the node at index.
+   c. Return the element of the node at index.
+   TIME COMPLEXITY: O(n)
+
+11. E set(int index, E e) :
+   a. If the index is less than 0 or greater than or equal to the size of the linked list, throw an IndexOutOfBoundsException.
+   b. Traverse the linked list to the node at index.
+   c. Store the element of the node at index.
+   d. Set the element of the node at index to the given element.
+   e. Return the stored element.
+   TIME COMPLEXITY: O(n)
+
+12. boolean contains(Object o) :
+   a. Traverse the linked list to find a node containing the given element.
+   b. Return true if the element is found, false otherwise.
+   TIME COMPLEXITY: O(n)
+
+13. int indexOf(Object o) :
+   a. Traverse the linked list to find the index of the node containing the given element.
+   b. Return the index of the element if found, -1 otherwise.
+   TIME COMPLEXITY: O(n)
+
+14. int lastIndexOf(Object o) :
+   a. Traverse the linked list to find the last index of the node containing the given element.
+   b. Return the last index of the element if found, -1 otherwise.
+   TIME COMPLEXITY: O(n)
+
+15. void clear() :
+   a. Set the head to null.
+   b. Set the size of the linked list to 0.
+   TIME COMPLEXITY: O(1)
