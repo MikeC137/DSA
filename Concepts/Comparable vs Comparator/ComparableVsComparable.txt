@@ -1,0 +1,52 @@
+Comparable (Interface)
+The Comparable interface is used to compare objects of a class with each other.
+Classes that implement the Comparable interface must provide an implementation for the 
+compareTo() method.
+The compareTo() method compares the current object with the specified object and 
+returns a negative integer, zero, or a positive integer
+depending on whether the current object is less than, equal to, or greater than the 
+specified object.
+
+Comparator (Interface)
+The Comparator interface is used to compare objects of a class with each other.
+Unlike the Comparable interface, which is implemented by the class itself, the 
+Comparator interface is implemented by a separate class.
+Classes that implement the Comparator interface must provide an implementation for 
+the compare() method.
+The compare() method compares two objects and returns a negative integer, zero, or 
+a positive integer depending on whether the first object is less than, equal to, or 
+greater than the second object.
+Comparators are useful when you want to define multiple ways of comparing objects or 
+when you want to compare objects of classes that you don't have control over.
+
+Differences
+Interface Purpose:
+
+Comparable: Provides the natural ordering of objects of a class. The class itself 
+implements this interface.
+Comparator: Provides an external way to compare objects. This is useful for sorting 
+in different ways or for classes that do not implement Comparable.
+
+Method Signature:
+Comparable: Uses int compareTo(T o). The method is implemented in the class of the 
+objects being compared.
+Comparator: Uses int compare(T o1, T o2). The method is implemented in a separate 
+comparator class or lambda expression.
+
+Implementation:
+Comparable: The class whose instances need to be compared must implement this interface.
+Comparator: Can be implemented as a separate class or used as a lambda expression. 
+Does not require modification of the class being compared.
+
+Sorting Order:
+Comparable: Defines the default or natural ordering of the objects. For example, if a 
+Person class implements Comparable, it will define a default order
+(like by age or name).
+Comparator: Allows for custom ordering that can be different from the natural ordering. 
+You can define multiple comparators for different sorting criteria.
+
+Use Cases:
+Comparable: Use when you want to impose a default natural order on the objects of a 
+class.
+Comparator: Use when you need multiple different sort orders or when you do not have 
+control over the class definition (e.g., sorting by different fields or criteria).
