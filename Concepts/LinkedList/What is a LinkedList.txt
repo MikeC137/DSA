@@ -1,0 +1,114 @@
+WHAT IS A LINKEDLIST?
+
+A linked list is a linear data structure where each element is a separate object. Each element (we will call it a node) 
+of a list is comprising of two items - the data and a reference to the next node. The last node has a reference to null. 
+The entry point into a linked list is called the head of the list. It should be noted that head is not a separate node, 
+but the reference to the first node. If the list is empty then the head is a null reference.
+
+In simple terms, a linked list consists of nodes where each node contains a data field and a reference(pointer) to the 
+next node in the list.
+
+Terminology: 
+
+1. Node: A node is an element of the list which contains the data and a reference to the next node.
+2. Pointer: A pointer is a reference to a node.
+3. Head: The head is a reference of the first node in the list.
+4. Tail: The tail is a reference of the last node in the list. 
+
+Types of Linked List:
+
+1. Singly Linked List: In this type of linked list, each node in the list is connected only to the next node in the list.
+2. Doubly Linked List: In this type of linked list, each node is connected to the next node and the previous node.
+3. Circular Linked List: In this type of linked list, the last node is connected to the first node forming a circular 
+chain.
+
+Advantages of Linked List:
+
+1. Dynamic Data Structure: Linked lists are dynamic data structures which can grow and shrink during execution of a 
+program.
+2. Insertion and Deletion: Insertion and deletion of nodes are really easier. Unlike arrays, we do not have to shift 
+elements after insertion or deletion of an element.
+3. No Memory Wastage: In linked lists, memory is allocated only when we need it. Unlike arrays, we do not have to 
+allocate memory for a fixed number of elements.
+4. Implementation: Linked lists can be used to implement other data structures like stacks, queues, trees, graphs, etc.
+
+Disadvantages of Linked List:
+
+1. Memory Usage: Linked lists use more memory than arrays because of the storage used by their pointers.
+2. Traversal: In linked lists, we cannot randomly access the elements. We have to start from the head and traverse the 
+list to access an element.
+3. Reverse Traversal: In singly linked lists, reverse traversal is not possible. In doubly linked lists, reverse traversal 
+is possible.
+4. Complexity: Linked lists have more complexity than arrays. The operations like insertion, deletion, etc. are more 
+complex than arrays.
+
+Singly and Doubly Linked Lists pros and cons:
+
+Singly Linked List
+
+Pros: 
+1. Simple Implementation: Singly linked lists are easier to implement than doubly linked lists.
+2. Memory Efficient: Singly linked lists require less memory per node because they do not contain a reference to the 
+previous node.
+3. Easy Traversal: Singly linked lists can be traversed in only one direction.
+
+Cons:
+1. Reverse Traversal: Singly linked lists cannot be traversed in reverse order.
+2. Deletion: In singly linked lists, deletion of a node requires traversal from the head to the node which is to be 
+deleted.
+
+Doubly Linked List
+
+Pros:
+1. Reverse Traversal: Doubly linked lists can be traversed in both directions.
+2. Deletion: Deletion of a node is easier in doubly linked lists as compared to singly linked lists.
+
+Cons:
+1. Memory Usage: Doubly linked lists require more memory per node because they contain a reference to the previous node.
+2. Complexity: Doubly linked lists are more complex than singly linked lists.
+
+COMMON OPERATIONS
+
+1. Insertion: Inserting a new node at the beginning, end, or at a specific position in the linked list.
+Time Complexity: O(1) for insertion at the beginning or end, O(n) for insertion at a specific position.
+
+2. Deletion: Deleting a node from the beginning, end, or at a specific position in the linked list.
+Time Complexity: O(1) for deletion from the beginning or end, O(n) for deletion from a specific position.
+
+3. Traversal: Traversing the linked list to access or modify the data in each node.
+Time Complexity: O(n)
+
+4. Searching: Searching for a specific element in the linked list.
+Time Complexity: O(n)
+
+5. Reversing: Reversing the linked list to change the order of elements.
+Time Complexity: O(n)
+
+6. Concatenation: Combining two linked lists into a single linked list.
+Time Complexity: O(1)
+
+7. Splitting: Splitting a linked list into two linked lists based on a given condition.
+Time Complexity: O(n)
+
+8. Merging: Merging two sorted linked lists into a single sorted linked list.
+Time Complexity: O(n)
+
+9. Finding Middle Element: Finding the middle element of the linked list.
+Time Complexity: O(n)
+
+AND MUCH MORE...
+
+Applications of Linked List:
+
+1. Implementation of Stacks and Queues.
+2. Implementation of Graphs: Adjacency list representation of graphs is most popular which uses linked lists to store 
+adjacent vertices.
+3. Dynamic Memory Allocation: Linked lists can be used to manage memory efficiently.
+4. Music Player: Linked lists can be used to implement a playlist in a music player.
+5. Image Viewer: Linked lists can be used to implement the forward and backward navigation of images in an image viewer.
+6. Undo Functionality: Linked lists can be used to implement the undo functionality in applications.
+7. Browser History: Linked lists can be used to implement the backward and forward navigation in a web browser.
+
+Linked lists are a fundamental data structure in computer science and are used in various applications due to their 
+flexibility and ease of implementation. Understanding linked lists is essential for any programmer to develop efficient 
+algorithms and data structures.
