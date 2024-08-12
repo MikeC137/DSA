@@ -11,7 +11,9 @@ public class Runner {
         laps.add(new Laptop("Apple", 8, 1200));
         laps.add(new Laptop("Acer", 12, 700));
 
-        Comparator<Laptop> com = new Comparator<Laptop>() {
+        // We can instantiate the Comparator interface by creating an anonymous inner
+        // class
+        Comparator<Laptop> compareByPrice = new Comparator<Laptop>() {
             public int compare(Laptop l1, Laptop l2) {
                 if (l1.getPrice() > l2.getPrice()) {
                     return 1;
@@ -22,7 +24,7 @@ public class Runner {
             }
         };
 
-        Collections.sort(laps, com);
+        Collections.sort(laps, compareByPrice);
 
         for (Laptop l : laps) {
             System.out.println(l);
