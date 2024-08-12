@@ -21,5 +21,36 @@ public class App {
         // remove(E e)
         arrayList.remove(1);
         System.out.println(arrayList);
+
+        // remove (Integer element)
+        arrayList.remove(3);
+        System.out.println(arrayList);
+
+        // get (int index)
+        int firstIndex = arrayList.get(0);
+        System.out.println(firstIndex);
+
+        // contains (Integer element)
+        System.out.println(arrayList.contains(77));
+
+        // size ()
+        System.out.println(arrayList.size());
+
+        // isEmpty()
+        System.out.println(arrayList.isEmpty());
+
+        // next()
+        System.out.println(arrayList.iterator().next());
+
+        // hasNext()
+        System.out.println(arrayList.iterator().hasNext());
+
+        // lastIndexOf (E element)
+        System.out.println(arrayList.lastIndexOf(77));
+        System.out.println(arrayList);
+
+        // clear()
+        arrayList.clear();
+        System.out.println(arrayList);
     }
 }
