@@ -38,13 +38,14 @@ public class MySinglyLinkedList<E> implements MyList<E> {
             for (int i = 0; i < index - 1; i++) {
                 current = current.next;
             }
+            Node<E> newNode = new Node<>(element);
+            newNode.next = current.next; // The new node is being added to the list because its next
+            // reference is the node after current
+            current.next = newNode; // The next reference of the previous object is being changed
+            // to point to the newly added object
+            size++;
         }
-        Node<E> newNode = new Node<>(element);
-        newNode.next = current.next; // The new node is being added to the list because its next
-        // reference is the node after current
-        current.next = newNode; // The next reference of the previous object is being changed
-        // to point to the newly added object
-        size++;
+
     }
 
     @Override
@@ -59,8 +60,17 @@ public class MySinglyLinkedList<E> implements MyList<E> {
 
     @Override
     public void addLast(E e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addLast'");
+        Node<E> newNode = new Node<E>(e);
+        if (head == null) {
+            head = newNode;
+        } else {
+            Node<E> current = head; // Start from the head
+            while (current.next != null) { // Traverse until the last node
+                current = current.next;
+            }
+            current.next = newNode;
+        }
+        size++;
     }
 
     @Override
