@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class MySinglyLinkedList<E> implements MyList<E> {
 
@@ -124,6 +125,12 @@ public class MySinglyLinkedList<E> implements MyList<E> {
             }
         }
         return true;
+    }
+
+    private void checkIfEmpty() {
+        if (head == null) {
+            throw new NoSuchElementException("The list is empty.");
+        }
     }
 
 }
