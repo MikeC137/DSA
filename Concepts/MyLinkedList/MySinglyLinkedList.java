@@ -9,9 +9,9 @@ public class MySinglyLinkedList<E> implements MyList<E> {
         private E data;
         private Node<E> next;
 
-        public Node(E data, MySinglyLinkedList.Node<E> next) {
+        public Node(E data) {
             this.data = data;
-            this.next = next;
+            this.next = null;
         }
     }
 
@@ -27,15 +27,22 @@ public class MySinglyLinkedList<E> implements MyList<E> {
     }
 
     @Override
-    public boolean add(E e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
-    }
-
-    @Override
     public void add(int index, E element) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+        Node<E> current = head;
+        if (index < 0 || index >= size) {
+            throw new IndexOutOfBoundsException("Index is out of bounds: " + index);
+        }
+        if (index == 0) {
+            addFirst(element);
+        } else {
+            for (int i = 0; i < index - 1; i++) {
+                current = current.next;
+            }
+        }
+        Node<E> newNode = new Node<>(element);
+        newNode.next = current.next;
+        current.next = newNode;
+        size++;
     }
 
     @Override

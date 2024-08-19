@@ -1,5 +1,4 @@
 public interface MyList<E> extends Iterable<E> {
-    public boolean add(E e);
 
     public void add(int index, E element);
 
