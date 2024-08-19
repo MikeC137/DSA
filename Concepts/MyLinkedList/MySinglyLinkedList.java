@@ -40,8 +40,10 @@ public class MySinglyLinkedList<E> implements MyList<E> {
             }
         }
         Node<E> newNode = new Node<>(element);
-        newNode.next = current.next;
-        current.next = newNode;
+        newNode.next = current.next; // The new node is being added to the list because its next
+        // reference is the node after current
+        current.next = newNode; // The next reference of the previous object is being changed
+        // to point to the newly added object
         size++;
     }
 
