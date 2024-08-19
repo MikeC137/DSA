@@ -29,9 +29,7 @@ public class MySinglyLinkedList<E> implements MyList<E> {
     @Override
     public void add(int index, E element) {
         Node<E> current = head;
-        if (index < 0 || index >= size) {
-            throw new IndexOutOfBoundsException("Index is out of bounds: " + index);
-        }
+        isIndexValid(index, true);
         if (index == 0) {
             addFirst(element);
         } else {
@@ -113,6 +111,19 @@ public class MySinglyLinkedList<E> implements MyList<E> {
     public E set(int index, E e) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'set'");
+    }
+
+    private boolean isIndexValid(int index, boolean add) {
+        if (add = true) {
+            if (index < 0 || index > size) {
+                throw new IndexOutOfBoundsException("Index is out of bounds: " + index);
+            }
+        } else {
+            if (index < 0 || index >= size) {
+                throw new IndexOutOfBoundsException("Index is out of bounds: " + index);
+            }
+        }
+        return true;
     }
 
 }
