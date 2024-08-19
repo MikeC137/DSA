@@ -74,8 +74,11 @@ public class MySinglyLinkedList<E> implements MyList<E> {
 
     @Override
     public E removeFirst() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeFirst'");
+        checkIfEmpty();
+        Node<E> object = head;
+        head = object.next;
+        size--;
+        return object.data;
     }
 
     @Override
