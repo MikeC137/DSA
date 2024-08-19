@@ -49,8 +49,12 @@ public class MySinglyLinkedList<E> implements MyList<E> {
 
     @Override
     public void addFirst(E e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addFirst'");
+        // The head is not a node. It's a reference to the first node!
+        Node<E> newNode = new Node<E>(e);
+        newNode.next = head; // The new node points to the current head
+        // (the object that the head pointed to before the new node was added
+        head = newNode; // Head is updated to point to the first object
+        size++;
     }
 
     @Override
