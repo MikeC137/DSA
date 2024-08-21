@@ -98,8 +98,21 @@ public class MySinglyLinkedList<E> implements MyList<E> {
 
     @Override
     public E remove(int index) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+        isIndexValid(index, false);
+
+        Node<E> current = head;
+
+        if (index == 0) {
+            return removeFirst();
+        } else {
+            for (int i = 0; i < index - 1; i++) {
+                current = current.next;
+            }
+        }
+        Node<E> nodeToRemove = current.next;
+        current.next = nodeToRemove.next;
+        size--;
+        return nodeToRemove.data;
     }
 
     @Override
