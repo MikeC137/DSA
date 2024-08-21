@@ -125,8 +125,12 @@ public class MySinglyLinkedList<E> implements MyList<E> {
 
     @Override
     public E getLast() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getLast'");
+        checkIfEmpty();
+        Node<E> current = head;
+        for (int i = 0; i < size - 1; i++) {
+            current = current.next;
+        }
+        return current.data;
     }
 
     @Override
