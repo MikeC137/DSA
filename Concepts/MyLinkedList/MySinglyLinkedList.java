@@ -82,9 +82,18 @@ public class MySinglyLinkedList<E> implements MyList<E> {
     }
 
     @Override
-    public E removeLast() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeLast'");
+    public void removeLast() {
+        checkIfEmpty();
+        if (head.next == null) {
+            head = null;
+        } else {
+            Node<E> current = head;
+            while (current.next.next != null) {
+                current = current.next;
+            }
+            current.next = null;
+        }
+        size--;
     }
 
     @Override
