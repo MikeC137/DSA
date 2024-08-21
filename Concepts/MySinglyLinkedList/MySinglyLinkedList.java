@@ -119,8 +119,8 @@ public class MySinglyLinkedList<E> implements MyList<E> {
 
     @Override
     public E getFirst() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getFirst'");
+        checkIfEmpty();
+        return head.data;
     }
 
     @Override
