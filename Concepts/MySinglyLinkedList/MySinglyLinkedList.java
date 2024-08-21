@@ -82,18 +82,20 @@ public class MySinglyLinkedList<E> implements MyList<E> {
     }
 
     @Override
-    public void removeLast() {
+    public E removeLast() {
         checkIfEmpty();
+        Node<E> current = head;
         if (head.next == null) {
-            head = null;
+            return removeFirst();
         } else {
-            Node<E> current = head;
             while (current.next.next != null) {
                 current = current.next;
             }
-            current.next = null;
         }
+        Node<E> lastNode = current.next;
+        current.next = null;
         size--;
+        return lastNode.data;
     }
 
     @Override

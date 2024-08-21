@@ -8,7 +8,7 @@ public interface MyList<E> extends Iterable<E> {
 
     public E removeFirst();
 
-    public void removeLast();
+    public E removeLast();
 
     public E remove(int index);
 
