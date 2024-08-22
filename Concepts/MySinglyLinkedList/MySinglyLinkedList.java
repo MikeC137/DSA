@@ -145,9 +145,21 @@ public class MySinglyLinkedList<E> implements MyList<E> {
 
     @Override
     public E set(int index, E e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'set'");
+        isIndexValid(index, false);
+        checkIfEmpty();
+        Node<E> current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+        E oldData = current.data;
+        current.data = e;
+
+        return oldData;
     }
+
+    // private boolean contains(Object E){
+
+    // }
 
     private boolean isIndexValid(int index, boolean add) {
         if (add = true) {
