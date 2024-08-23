@@ -157,9 +157,16 @@ public class MySinglyLinkedList<E> implements MyList<E> {
         return oldData;
     }
 
-    // private boolean contains(Object E){
-
-    // }
+    private boolean contains(Object e) {
+        Node<E> current = head;
+        for (int i = 0; i < size; i++) {
+            if (current.data.equals(e)) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
 
     private boolean isIndexValid(int index, boolean add) {
         if (add = true) {
