@@ -179,6 +179,18 @@ public class MySinglyLinkedList<E> implements MyList<E> {
         return -1;
     }
 
+    public int lastIndexOf(Object e) {
+        Node<E> current = head;
+        int lastIndex = -1;
+        for (int i = 0; i < size; i++) {
+            if (current.data.equals(e)) {
+                lastIndex = i;
+            }
+            current = current.next;
+        }
+        return lastIndex;
+    }
+
     private boolean isIndexValid(int index, boolean add) {
         if (add = true) {
             if (index < 0 || index > size) {
