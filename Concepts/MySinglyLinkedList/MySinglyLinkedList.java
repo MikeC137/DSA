@@ -157,7 +157,7 @@ public class MySinglyLinkedList<E> implements MyList<E> {
         return oldData;
     }
 
-    private boolean contains(Object e) {
+    public boolean contains(Object e) {
         Node<E> current = head;
         for (int i = 0; i < size; i++) {
             if (current.data.equals(e)) {
