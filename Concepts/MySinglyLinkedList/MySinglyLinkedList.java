@@ -168,6 +168,17 @@ public class MySinglyLinkedList<E> implements MyList<E> {
         return false;
     }
 
+    public int indexOf(Object e) {
+        Node<E> current = head;
+        for (int i = 0; i < size; i++) {
+            if (current.data.equals(e)) {
+                return i;
+            }
+            current = current.next;
+        }
+        return -1;
+    }
+
     private boolean isIndexValid(int index, boolean add) {
         if (add = true) {
             if (index < 0 || index > size) {
