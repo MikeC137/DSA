@@ -21,11 +21,28 @@ public class MySinglyLinkedList<E> implements MyList<E> {
         this.size = size;
     }
 
-    @Override
-    public Iterator<E> iterator() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'iterator'");
+    private class LinkedListIterator implements Iterator<E> {
+        private Node<E> current;
+
+        public LinkedListIterator(MySinglyLinkedList.Node<E> current) {
+            this.current = head;
+        }
+
+        @Override
+        public boolean hasNext() {
+        }
+
+        @Override
+        public E next() {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'next'");
+        }
+
     }
+
+    // @Override
+    // public Iterator<E> iterator() {
+    // }
 
     @Override
     public void add(int index, E element) {
