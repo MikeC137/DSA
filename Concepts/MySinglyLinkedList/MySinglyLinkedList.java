@@ -237,4 +237,18 @@ public class MySinglyLinkedList<E> implements MyList<E> {
         }
     }
 
+    public String toString() {
+        StringBuilder string = new StringBuilder("[");
+        Node<E> current = head;
+        while (current != null) {
+            string.append(current);
+            if (current.next != null) {
+                string.append(", ");
+            }
+            current = current.next;
+        }
+        string.append("]");
+        return string.toString();
+    }
+
 }
