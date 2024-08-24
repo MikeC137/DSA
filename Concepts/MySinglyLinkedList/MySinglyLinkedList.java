@@ -191,6 +191,11 @@ public class MySinglyLinkedList<E> implements MyList<E> {
         return lastIndex;
     }
 
+    private void clear() {
+        head = null;
+        size = 0;
+    }
+
     private boolean isIndexValid(int index, boolean add) {
         if (add = true) {
             if (index < 0 || index > size) {
