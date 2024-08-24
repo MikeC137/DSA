@@ -16,7 +16,7 @@ public class MySinglyLinkedList<E> implements MyList<E> {
         }
     }
 
-    public MySinglyLinkedList(MySinglyLinkedList.Node<E> head, int size) {
+    public MySinglyLinkedList() {
         this.head = head;
         this.size = size;
     }
@@ -42,7 +42,6 @@ public class MySinglyLinkedList<E> implements MyList<E> {
             current = current.next;
             return current.data;
         }
-
     }
 
     @Override
