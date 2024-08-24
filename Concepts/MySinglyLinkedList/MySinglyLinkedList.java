@@ -30,6 +30,7 @@ public class MySinglyLinkedList<E> implements MyList<E> {
 
         @Override
         public boolean hasNext() {
+            return current != null;
         }
 
         @Override
