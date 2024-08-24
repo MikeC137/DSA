@@ -35,8 +35,12 @@ public class MySinglyLinkedList<E> implements MyList<E> {
 
         @Override
         public E next() {
-            // TODO Auto-generated method stub
-            throw new UnsupportedOperationException("Unimplemented method 'next'");
+            if (!(hasNext())) {
+                throw new NoSuchElementException();
+            }
+            E data = current.data;
+            current = current.next;
+            return current.data;
         }
 
     }
