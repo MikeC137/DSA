@@ -24,7 +24,7 @@ public class MySinglyLinkedList<E> implements MyList<E> {
     private class LinkedListIterator implements Iterator<E> {
         private Node<E> current;
 
-        public LinkedListIterator(MySinglyLinkedList.Node<E> current) {
+        public LinkedListIterator() {
             this.current = head;
         }
 
@@ -45,9 +45,10 @@ public class MySinglyLinkedList<E> implements MyList<E> {
 
     }
 
-    // @Override
-    // public Iterator<E> iterator() {
-    // }
+    @Override
+    public Iterator<E> iterator() {
+        return new LinkedListIterator(head);
+    }
 
     @Override
     public void add(int index, E element) {
