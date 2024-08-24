@@ -12,6 +12,15 @@ public class App {
         // Test addLast(E e)
         linkedList.addLast("55");
         linkedList.addLast("77");
+
+        // Test removeFirst()
+        linkedList.removeFirst();
+
+        // Test removeLast()
+        linkedList.removeLast();
+
+        // Test remove(int index)
+        linkedList.remove(1);
         System.out.println(linkedList.toString());
     }
 }
