@@ -47,7 +47,7 @@ public class MySinglyLinkedList<E> implements MyList<E> {
 
     @Override
     public Iterator<E> iterator() {
-        return new LinkedListIterator(head);
+        return new LinkedListIterator();
     }
 
     @Override
