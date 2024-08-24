@@ -237,11 +237,12 @@ public class MySinglyLinkedList<E> implements MyList<E> {
         }
     }
 
+    @Override
     public String toString() {
         StringBuilder string = new StringBuilder("[");
         Node<E> current = head;
         while (current != null) {
-            string.append(current);
+            string.append(current.data);
             if (current.next != null) {
                 string.append(", ");
             }
