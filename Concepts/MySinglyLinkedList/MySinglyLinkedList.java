@@ -40,7 +40,7 @@ public class MySinglyLinkedList<E> implements MyList<E> {
             }
             E data = current.data;
             current = current.next;
-            return current.data;
+            return data;
         }
     }
 
