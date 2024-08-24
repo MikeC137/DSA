@@ -213,7 +213,7 @@ public class MySinglyLinkedList<E> implements MyList<E> {
         return lastIndex;
     }
 
-    private void clear() {
+    public void clear() {
         head = null;
         size = 0;
     }
