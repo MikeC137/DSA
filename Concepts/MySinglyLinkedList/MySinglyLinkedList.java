@@ -17,8 +17,8 @@ public class MySinglyLinkedList<E> implements MyList<E> {
     }
 
     public MySinglyLinkedList() {
-        this.head = head;
-        this.size = size;
+        this.head = null;
+        this.size = 0;
     }
 
     private class LinkedListIterator implements Iterator<E> {
