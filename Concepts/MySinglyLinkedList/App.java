@@ -37,6 +37,11 @@ public class App {
         // Test get(int index)
         String secondElement = linkedList.get(1);
         System.out.println(secondElement);
-        System.out.println(linkedList.toString());
+
+        // Test contains(Object e)
+        boolean invalidElement = linkedList.contains("22");
+        boolean validElement = linkedList.contains("27");
+        System.out.println(invalidElement);
+        System.out.println(validElement);
     }
 }
