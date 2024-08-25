@@ -29,6 +29,14 @@ public class App {
         // Test getFirst()
         String firstElement = linkedList.getFirst();
         System.out.println(firstElement);
+
+        // Test getLast()
+        String lastElement = linkedList.getLast();
+        System.out.println(lastElement);
+
+        // Test get(int index)
+        String secondElement = linkedList.get(1);
+        System.out.println(secondElement);
         System.out.println(linkedList.toString());
     }
 }
