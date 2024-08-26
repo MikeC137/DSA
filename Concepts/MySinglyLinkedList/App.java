@@ -43,5 +43,14 @@ public class App {
         boolean validElement = linkedList.contains("27");
         System.out.println(invalidElement);
         System.out.println(validElement);
+
+        // Test indexOf(Object e)
+        System.out.println(linkedList.indexOf(secondElement));
+        System.out.println(linkedList.indexOf(firstElement));
+
+        // Test lastIndexOf(Object e)
+        linkedList.add(2, "55");
+        System.out.println(linkedList);
+        System.out.println(linkedList.lastIndexOf("55"));
     }
 }
