@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 public class App {
     public static void main(String[] args) {
         MySinglyLinkedList<String> linkedList = new MySinglyLinkedList<>();
@@ -52,5 +54,12 @@ public class App {
         linkedList.add(2, "55");
         System.out.println(linkedList);
         System.out.println(linkedList.lastIndexOf("55"));
+
+        // Test Iterator
+        Iterator<String> iterator = linkedList.iterator();
+        while (iterator.hasNext()) {
+            String element = iterator.next();
+            System.out.println(element);
+        }
     }
 }
