@@ -61,5 +61,9 @@ public class App {
             String element = iterator.next();
             System.out.println(element);
         }
+
+        // Test clear()
+        linkedList.clear();
+        System.out.println(linkedList);
     }
 }
