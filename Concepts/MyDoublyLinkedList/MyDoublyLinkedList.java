@@ -2,6 +2,7 @@ import java.util.Iterator;
 
 public class MyDoublyLinkedList<E> implements MyList<E> {
     private Node<E> head;
+    private Node<E> tail;
     private int size;
 
     private static class Node<E> {
@@ -15,6 +16,12 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
             previous = null;
         }
 
+    }
+
+    public MyDoublyLinkedList() {
+        head = null;
+        tail = null;
+        size = 0;
     }
 
     @Override
