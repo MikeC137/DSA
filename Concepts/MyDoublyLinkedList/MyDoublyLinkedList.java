@@ -26,8 +26,22 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public void addFirst(E e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addFirst'");
+        Node<E> newElement = new Node<E>(e);
+        newElement.next = head;
+
+        if (head != null) {
+            head.previous = newElement;
+        }
+
+        head = newElement;
+
+        if (tail == null) {
+            tail = newElement;
+        }
+
+        newElement.previous = null;
+
+        size++;
     }
 
     @Override
