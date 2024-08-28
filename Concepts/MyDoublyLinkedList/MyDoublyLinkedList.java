@@ -29,13 +29,13 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
         Node<E> newElement = new Node<E>(e);
         newElement.next = head;
 
-        if (head != null) {
+        if (!isEmpty()) {
             head.previous = newElement;
         }
 
         head = newElement;
 
-        if (tail == null) {
+        if (isEmpty()) {
             tail = newElement;
         }
 
