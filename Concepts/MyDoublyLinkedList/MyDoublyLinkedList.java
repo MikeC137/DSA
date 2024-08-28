@@ -98,8 +98,19 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public E removeLast() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeLast'");
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+        Node<E> oldElement = tail;
+        if (head.next == null) {
+            head = null;
+            tail = null;
+        } else {
+            tail = tail.previous;
+            tail.next = null;
+        }
+        size--;
+        return oldElement.data;
     }
 
     @Override
