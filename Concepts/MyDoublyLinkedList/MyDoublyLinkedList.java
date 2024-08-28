@@ -46,7 +46,7 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public void addLast(E e) {
-        if (tail == null) {
+        if (isEmpty()) {
             addFirst(e);
         } else {
             Node<E> newElement = new Node<E>(e);
