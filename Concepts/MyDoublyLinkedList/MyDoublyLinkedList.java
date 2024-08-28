@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class MyDoublyLinkedList<E> implements MyList<E> {
     private Node<E> head;
@@ -80,8 +81,19 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public E removeFirst() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'removeFirst'");
+        if (isEmpty()) {
+            throw new NoSuchElementException("The list is empty");
+        }
+        Node<E> oldElement = head;
+        if (head.next == null) {
+            head = null;
+            tail = null;
+        } else {
+            head = head.next;
+            head.previous = null;
+        }
+        size--;
+        return oldElement.data;
     }
 
     @Override
