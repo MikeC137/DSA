@@ -141,4 +141,11 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
         throw new UnsupportedOperationException("Unimplemented method 'iterator'");
     }
 
+    public boolean checkIfEmpty() {
+        if (head == null) {
+            return true;
+        }
+        return true;
+    }
+
 }
