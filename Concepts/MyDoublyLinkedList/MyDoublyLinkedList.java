@@ -164,4 +164,10 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
         }
         return true;
     }
+
+    public void isIndexValid(int index) {
+        if (index < 0 || index > size) { // Validate index
+            throw new IndexOutOfBoundsException("Invalid index: " + index);
+        }
+    }
 }
