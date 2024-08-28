@@ -59,8 +59,25 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public void add(int index, E e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'add'");
+        if (index < 0 || index > size) { // Validate index
+            throw new IndexOutOfBoundsException("Invalid index: " + index);
+        }
+        if (index == 0) {
+            addFirst(e);
+        } else if (index == size) {
+            addLast(e);
+        } else {
+            Node<E> current = head;
+            for (int i = 0; i < index; i++) {
+                current = current.next;
+                Node<E> newElement = new Node<E>(e);
+                newElement.previous = current.previous;
+                newElement.next = current;
+                current.previous.next = newElement;
+                current.previous = newElement;
+            }
+        }
+        size++;
     }
 
     @Override
@@ -147,5 +164,4 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
         }
         return true;
     }
-
 }
