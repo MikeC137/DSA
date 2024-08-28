@@ -59,9 +59,7 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public void add(int index, E e) {
-        if (index < 0 || index > size) { // Validate index
-            throw new IndexOutOfBoundsException("Invalid index: " + index);
-        }
+        isIndexValid(index);
         if (index == 0) {
             addFirst(e);
         } else if (index == size) {
