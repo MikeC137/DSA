@@ -46,8 +46,15 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public void addLast(E e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'addLast'");
+        if (tail == null) {
+            addFirst(e);
+        } else {
+            Node<E> newElement = new Node<E>(e);
+            newElement.previous = tail;
+            tail.next = newElement;
+            tail = newElement;
+            size++;
+        }
     }
 
     @Override
