@@ -51,9 +51,11 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
             addFirst(e);
         } else {
             Node<E> newElement = new Node<E>(e);
+
             newElement.previous = tail;
             tail.next = newElement;
             tail = newElement;
+
             size++;
         }
     }
@@ -69,12 +71,14 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
             Node<E> current = head;
             for (int i = 0; i < index; i++) {
                 current = current.next;
-                Node<E> newElement = new Node<E>(e);
-                newElement.previous = current.previous;
-                newElement.next = current;
-                current.previous.next = newElement;
-                current.previous = newElement;
             }
+            Node<E> newElement = new Node<E>(e);
+
+            newElement.previous = current.previous;
+            newElement.next = current;
+
+            current.previous.next = newElement;
+            current.previous = newElement;
         }
         size++;
     }
@@ -115,8 +119,25 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public E remove(int index) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+        isIndexValid(index);
+
+        if (head.next == null) {
+            return removeFirst();
+        } else if (index == size - 1) {
+            return removeLast();
+        }
+        Node<E> current = head;
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+
+        Node<E> oldElement = current;
+
+        current.previous.next = current.next;
+        current.next.previous = current.previous;
+
+        size--;
+        return oldElement.data;
     }
 
     @Override
