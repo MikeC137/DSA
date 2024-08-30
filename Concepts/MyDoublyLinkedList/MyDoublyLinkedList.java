@@ -186,8 +186,18 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public E set(int index, E e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'set'");
+        isIndexValid(index);
+
+        Node<E> current = head;
+
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+
+        E oldData = current.data;
+        current.data = e;
+
+        return oldData;
     }
 
     @Override
