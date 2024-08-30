@@ -238,8 +238,16 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public int lastIndexOf(Object o) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'lastIndexOf'");
+
+        Node<E> current = tail;
+        for (int i = size - 1; i >= 0; i--) {
+            if (current.data == null ? o == null : current.data.equals(o)) {
+                return i;
+            }
+            current = current.previous;
+        }
+
+        return -1;
     }
 
     @Override
