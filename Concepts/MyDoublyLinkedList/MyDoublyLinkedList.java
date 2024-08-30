@@ -178,8 +178,18 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public int indexOf(Object o) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'indexOf'");
+        Node<E> current = head;
+        for (int i = 0; i < size; i++) {
+            if (o == null ? current.data == null : current.data.equals(o)) { // Besides checking
+                // whether current.data is equal to o, this statement also ensures that the
+                // method can correctly handle 'null' values. It checks if o is null and if so,
+                // it compares current.data to null. If current.data is null and you call
+                // current.data.equals(o), it will throw a NullPointerException.
+                return i;
+            }
+            current = current.next;
+        }
+        return -1;
     }
 
     @Override
