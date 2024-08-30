@@ -16,8 +16,15 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
         @Override
         public E next() {
-            // TODO Auto-generated method stub
-            throw new UnsupportedOperationException("Unimplemented method 'next'");
+            if (current == null) {
+                throw new NoSuchElementException();
+            }
+
+            E data = current.data;
+            Node<E> lastReturnedNode = current;
+            current = current.next;
+
+            return data;
         }
 
     }
