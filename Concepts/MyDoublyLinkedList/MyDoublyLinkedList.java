@@ -9,6 +9,10 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
     private class doublyLinkedListIterator implements Iterator<E> {
         private Node<E> current;
 
+        public doublyLinkedListIterator() {
+            this.current = head;
+        }
+
         @Override
         public boolean hasNext() {
             return current != null;
@@ -282,8 +286,7 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public Iterator<E> iterator() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'iterator'");
+        return new doublyLinkedListIterator();
     }
 
     public boolean isEmpty() {
