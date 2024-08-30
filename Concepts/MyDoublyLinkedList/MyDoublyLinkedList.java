@@ -164,14 +164,24 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public E getLast() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getLast'");
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+
+        return tail.data;
     }
 
     @Override
     public E get(int index) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'get'");
+        isIndexValid(index);
+
+        Node<E> current = head;
+
+        for (int i = 0; i < index; i++) {
+            current = current.next;
+        }
+
+        return current.data;
     }
 
     @Override
