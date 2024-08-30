@@ -155,8 +155,11 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public E getFirst() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getFirst'");
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+
+        return head.data;
     }
 
     @Override
