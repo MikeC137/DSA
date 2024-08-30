@@ -192,8 +192,20 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public boolean contains(Object o) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'contains'");
+        if (isEmpty()) {
+            return false;
+        }
+
+        Node<E> current = head;
+
+        for (int i = 0; i < size; i++) {
+            if (o == null ? current.data == null : o.equals(current.data)) {
+                return true;
+            }
+            current = current.next;
+        }
+
+        return false;
     }
 
     @Override
