@@ -6,6 +6,22 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
     private Node<E> tail;
     private int size;
 
+    private class doublyLinkedListIterator implements Iterator<E> {
+        private Node<E> current;
+
+        @Override
+        public boolean hasNext() {
+            return current != null;
+        }
+
+        @Override
+        public E next() {
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'next'");
+        }
+
+    }
+
     private static class Node<E> {
         private E data;
         private Node<E> next;
