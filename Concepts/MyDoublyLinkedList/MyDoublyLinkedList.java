@@ -142,8 +142,15 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public boolean remove(Object o) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+        int indexOfOldElement = indexOf(o);
+
+        if (indexOfOldElement == -1) {
+            return false;
+        }
+
+        remove(indexOfOldElement);
+
+        return true;
     }
 
     @Override
@@ -179,6 +186,7 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
     @Override
     public int indexOf(Object o) {
         Node<E> current = head;
+
         for (int i = 0; i < size; i++) {
             if (o == null ? current.data == null : current.data.equals(o)) { // Besides checking
                 // whether current.data is equal to o, this statement also ensures that the
@@ -187,6 +195,7 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
                 // current.data.equals(o), it will throw a NullPointerException.
                 return i;
             }
+
             current = current.next;
         }
         return -1;
