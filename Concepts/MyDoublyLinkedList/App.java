@@ -7,8 +7,10 @@ public class App {
         list.add(1, "Mike");
         list.add(2, "John");
         list.add(3, "Tim");
-        list.add(1, "Tony");
-        list.add(0, "Shawn");
+        System.out.println(list.toString());
+
+        // Test addFirst(E e)
+        list.addFirst("Peter");
         System.out.println(list.toString());
     }
 }
