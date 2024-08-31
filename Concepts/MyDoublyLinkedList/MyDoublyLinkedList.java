@@ -74,17 +74,13 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public void addLast(E e) {
-        if (isEmpty()) {
-            addFirst(e);
-        } else {
-            Node<E> newElement = new Node<E>(e);
+        Node<E> newElement = new Node<E>(e);
 
-            newElement.previous = tail;
-            tail.next = newElement;
-            tail = newElement;
+        newElement.previous = tail;
+        tail.next = newElement;
+        tail = newElement;
 
-            size++;
-        }
+        size++;
     }
 
     @Override
@@ -96,18 +92,21 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
             addLast(e);
         } else {
             Node<E> current = head;
+
             for (int i = 0; i < index; i++) {
                 current = current.next;
             }
-            Node<E> newElement = new Node<E>(e);
+
+            Node<E> newElement = new Node<>(e);
 
             newElement.previous = current.previous;
             newElement.next = current;
 
             current.previous.next = newElement;
             current.previous = newElement;
+            size++;
         }
-        size++;
+
     }
 
     @Override
