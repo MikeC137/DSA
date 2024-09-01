@@ -7,10 +7,17 @@ public class App {
         list.add(1, "Mike");
         list.add(2, "John");
         list.add(3, "Tim");
+        list.add(4, "Ryan");
         System.out.println(list.toString());
 
         // Test addFirst(E e)
         list.addFirst("Peter");
+        System.out.println(list.toString());
+
+        // // Test addLast(E e)
+        list.addLast("Dave");
+        System.out.println(list.toString());
+        list.addLast("Chris");
         System.out.println(list.toString());
     }
 }

@@ -6,10 +6,10 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
     private Node<E> tail;
     private int size;
 
-    private class doublyLinkedListIterator implements Iterator<E> {
+    private class DoublyLinkedListIterator implements Iterator<E> {
         private Node<E> current;
 
-        public doublyLinkedListIterator() {
+        public DoublyLinkedListIterator() {
             this.current = head;
         }
 
@@ -25,12 +25,10 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
             }
 
             E data = current.data;
-            Node<E> lastReturnedNode = current;
             current = current.next;
 
             return data;
         }
-
     }
 
     private static class Node<E> {
@@ -43,7 +41,6 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
             next = null;
             previous = null;
         }
-
     }
 
     public MyDoublyLinkedList() {
@@ -54,59 +51,55 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public void addFirst(E e) {
-        Node<E> newElement = new Node<E>(e);
-        newElement.next = head;
-
-        if (!isEmpty()) {
-            head.previous = newElement;
-        }
-
-        head = newElement;
-
+        Node<E> newElement = new Node<>(e);
         if (isEmpty()) {
+            head = newElement;
             tail = newElement;
+        } else {
+            newElement.next = head;
+            head.previous = newElement;
+            head = newElement;
         }
-
-        newElement.previous = null;
-
         size++;
     }
 
     @Override
     public void addLast(E e) {
-        Node<E> newElement = new Node<E>(e);
-
-        newElement.previous = tail;
-        tail.next = newElement;
-        tail = newElement;
-
+        Node<E> newElement = new Node<>(e);
+        if (isEmpty()) {
+            head = newElement;
+            tail = newElement;
+        } else {
+            tail.next = newElement;
+            newElement.previous = tail;
+            tail = newElement;
+        }
         size++;
     }
 
     @Override
     public void add(int index, E e) {
         isIndexValid(index);
+
         if (index == 0) {
             addFirst(e);
         } else if (index == size) {
             addLast(e);
         } else {
             Node<E> current = head;
-
             for (int i = 0; i < index; i++) {
                 current = current.next;
             }
 
             Node<E> newElement = new Node<>(e);
-
             newElement.previous = current.previous;
             newElement.next = current;
 
             current.previous.next = newElement;
             current.previous = newElement;
+
             size++;
         }
-
     }
 
     @Override
@@ -132,7 +125,7 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
             throw new NoSuchElementException();
         }
         Node<E> oldElement = tail;
-        if (head.next == null) {
+        if (tail.previous == null) {
             head = null;
             tail = null;
         } else {
@@ -147,35 +140,32 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
     public E remove(int index) {
         isIndexValid(index);
 
-        if (head.next == null) {
+        if (index == 0) {
             return removeFirst();
         } else if (index == size - 1) {
             return removeLast();
+        } else {
+            Node<E> current = head;
+            for (int i = 0; i < index; i++) {
+                current = current.next;
+            }
+
+            Node<E> oldElement = current;
+            current.previous.next = current.next;
+            current.next.previous = current.previous;
+
+            size--;
+            return oldElement.data;
         }
-        Node<E> current = head;
-        for (int i = 0; i < index; i++) {
-            current = current.next;
-        }
-
-        Node<E> oldElement = current;
-
-        current.previous.next = current.next;
-        current.next.previous = current.previous;
-
-        size--;
-        return oldElement.data;
     }
 
     @Override
     public boolean remove(Object o) {
         int indexOfOldElement = indexOf(o);
-
         if (indexOfOldElement == -1) {
             return false;
         }
-
         remove(indexOfOldElement);
-
         return true;
     }
 
@@ -184,7 +174,6 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
         if (isEmpty()) {
             throw new NoSuchElementException();
         }
-
         return head.data;
     }
 
@@ -193,70 +182,50 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
         if (isEmpty()) {
             throw new NoSuchElementException();
         }
-
         return tail.data;
     }
 
     @Override
     public E get(int index) {
         isIndexValid(index);
-
         Node<E> current = head;
-
         for (int i = 0; i < index; i++) {
             current = current.next;
         }
-
         return current.data;
     }
 
     @Override
     public E set(int index, E e) {
         isIndexValid(index);
-
         Node<E> current = head;
-
         for (int i = 0; i < index; i++) {
             current = current.next;
         }
-
         E oldData = current.data;
         current.data = e;
-
         return oldData;
     }
 
     @Override
     public boolean contains(Object o) {
-        if (isEmpty()) {
-            return false;
-        }
-
         Node<E> current = head;
-
-        for (int i = 0; i < size; i++) {
+        while (current != null) {
             if (o == null ? current.data == null : o.equals(current.data)) {
                 return true;
             }
             current = current.next;
         }
-
         return false;
     }
 
     @Override
     public int indexOf(Object o) {
         Node<E> current = head;
-
         for (int i = 0; i < size; i++) {
-            if (o == null ? current.data == null : current.data.equals(o)) { // Besides checking
-                // whether current.data is equal to o, this statement also ensures that the
-                // method can correctly handle 'null' values. It checks if o is null and if so,
-                // it compares current.data to null. If current.data is null and you call
-                // current.data.equals(o), it will throw a NullPointerException.
+            if (o == null ? current.data == null : current.data.equals(o)) {
                 return i;
             }
-
             current = current.next;
         }
         return -1;
@@ -264,7 +233,6 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public int lastIndexOf(Object o) {
-
         Node<E> current = tail;
         for (int i = size - 1; i >= 0; i--) {
             if (current.data == null ? o == null : current.data.equals(o)) {
@@ -272,7 +240,6 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
             }
             current = current.previous;
         }
-
         return -1;
     }
 
@@ -285,14 +252,13 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
 
     @Override
     public Iterator<E> iterator() {
-        return new doublyLinkedListIterator();
+        return new DoublyLinkedListIterator();
     }
 
     @Override
     public String toString() {
         StringBuilder string = new StringBuilder("[");
         Node<E> current = head;
-
         while (current != null) {
             string.append(current.data);
             if (current.next != null) {
@@ -300,21 +266,16 @@ public class MyDoublyLinkedList<E> implements MyList<E> {
             }
             current = current.next;
         }
-
         string.append("]");
-
         return string.toString();
     }
 
     public boolean isEmpty() {
-        if (head == null) {
-            return true;
-        }
-        return true;
+        return size == 0;
     }
 
     public void isIndexValid(int index) {
-        if (index < 0 || index > size) { // Validate index
+        if (index < 0 || index > size) {
             throw new IndexOutOfBoundsException("Invalid index: " + index);
         }
     }
