@@ -14,10 +14,25 @@ public class App {
         list.addFirst("Peter");
         System.out.println(list.toString());
 
-        // // Test addLast(E e)
+        // Test addLast(E e)
         list.addLast("Dave");
         System.out.println(list.toString());
-        list.addLast("Chris");
+
+        // Test removeFirst()
+        list.removeFirst();
         System.out.println(list.toString());
+
+        // Test removeLast()
+        list.removeLast();
+        System.out.println(list.toString());
+
+        // Test remove(int index)
+        list.remove(2);
+        System.out.println(list.toString());
+
+        // Test remove(Object o)
+        list.remove("Tim");
+        System.out.println(list.toString());
+
     }
 }
