@@ -51,5 +51,12 @@ public class App {
         System.out.println(list.contains("Mike"));
         System.out.println(list.contains("Ryan"));
 
+        // Test indexOf(Object o)
+        System.out.println(list.indexOf("Mike"));
+
+        // Test lastIndexOf(Object o)
+        list.add(1, "Mike");
+        System.out.println(list.lastIndexOf("Mike"));
+
     }
 }
