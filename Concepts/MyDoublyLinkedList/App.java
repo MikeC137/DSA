@@ -42,5 +42,14 @@ public class App {
 
         // Test get(int index)
         System.out.println(list.get(1).toString());
+
+        // Test set(int index, E e)
+        list.set(2, "Howard");
+        System.out.println(list.toString());
+
+        // Test contains (Object o)
+        System.out.println(list.contains("Mike"));
+        System.out.println(list.contains("Ryan"));
+
     }
 }
