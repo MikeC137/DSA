@@ -34,5 +34,13 @@ public class App {
         list.remove("Tim");
         System.out.println(list.toString());
 
+        // Test getFirst()
+        System.out.println(list.getFirst().toString());
+
+        // Test getLast()
+        System.out.println(list.getLast().toString());
+
+        // Test get(int index)
+        System.out.println(list.get(1).toString());
     }
 }
