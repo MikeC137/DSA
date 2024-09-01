@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 public class App {
     public static void main(String[] args) {
         MyDoublyLinkedList<String> list = new MyDoublyLinkedList<>();
@@ -58,5 +60,15 @@ public class App {
         list.add(1, "Mike");
         System.out.println(list.lastIndexOf("Mike"));
 
+        // Test Iterator
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            String element = iterator.next();
+            System.out.println(element);
+        }
+
+        // Test clear()
+        list.clear();
+        System.out.println(list);
     }
 }
