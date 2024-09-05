@@ -1,0 +1,9 @@
+ALGORITHMS OF EACH OPERATION IN ARRAY-BASED STACK
+
+1. E push(E item)
+    a. Check if the list is full. If full, double it's size
+    b. Add the element at the top of the stack (end of the array)
+    c. Increment the size of the stack
+    Time Complexity: If full array O(n) --- If array not full O(1)  
+    Amortized Time Complexity: O(1) over a series of add operations 
+    if the array size grows geometrically (e.g., doubling).
