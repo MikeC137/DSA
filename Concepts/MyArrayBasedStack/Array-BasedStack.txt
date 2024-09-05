@@ -1,0 +1,19 @@
+ARRAY-BASED STACK
+
+ADVANTAGES:
+
+Fast Access: Direct indexing allows O(1) time complexity for push, pop, and peek operations.
+
+Memory Efficiency: An array-based stack uses less memory per element compared to a linked list 
+because there's no need to store pointers or references to other nodes.
+
+Simplicity: Easier to implement if you are already familiar with arrays.
+
+
+DISADVANTAGES:
+Fixed Capacity: You need to decide on an initial capacity. If the stack grows beyond this 
+capacity, you'll need to resize the array, which can be an expensive operation 
+(though still O(n) on average).
+
+Wasted Space: If the stack is significantly smaller than the array's capacity, some memory 
+is wasted.
