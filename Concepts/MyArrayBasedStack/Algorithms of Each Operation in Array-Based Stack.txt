@@ -33,3 +33,9 @@ ALGORITHMS OF EACH OPERATION IN ARRAY-BASED STACK
     (size - current index)
     Time Complexity: O(n)
     Amortized Time Complexity: O(n)
+
+5. boolean empty()
+    a. Check if the size of the stack is equal to 0.
+    b. Return true if the size is 0 (i.e., the stack is empty), otherwise return false.
+    Time Complexity: O(1)
+    Amortized Time Complexity: O(1)
