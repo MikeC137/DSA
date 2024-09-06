@@ -30,8 +30,16 @@ public class ArrayStack<E> implements Stack<E> {
 
     @Override
     public E pop() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pop'");
+        if (empty()) {
+            throw new EmptyStackException();
+        }
+
+        E topElement = elements[size - 1];
+        elements[size - 1] = null;
+
+        size--;
+
+        return topElement;
     }
 
     @Override
