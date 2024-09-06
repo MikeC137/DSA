@@ -7,3 +7,10 @@ ALGORITHMS OF EACH OPERATION IN ARRAY-BASED STACK
     Time Complexity: If full array O(n) --- If array not full O(1)  
     Amortized Time Complexity: O(1) over a series of add operations 
     if the array size grows geometrically (e.g., doubling).
+
+2. E peek()
+    a. Check if the list is empty. Throw an exception if it is.
+    b. Access the top element of the stack directly
+    c. Return the last element
+    Time Complexity: O(1)
+    Amortized Time Complexity: O(1)
