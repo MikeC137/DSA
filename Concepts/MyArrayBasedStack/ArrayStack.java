@@ -1,11 +1,11 @@
 import java.util.Iterator;
 
-public class MyStack<E> implements Stack<E> {
+public class ArrayStack<E> implements Stack<E> {
     private E[] elements;
     private int size = 0;
     private static final int DEFAULT_CAPACITY = 10;
 
-    public MyStack() {
+    public ArrayStack() {
         elements = (E[]) new Object[DEFAULT_CAPACITY];
     }
 
