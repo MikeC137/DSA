@@ -11,13 +11,13 @@ public class ArrayStack<E> implements Stack<E> {
     }
 
     @Override
-    public E push(E item) {
+    public E push(E e) {
         if (size == elements.length) {
             grow();
         }
-        elements[size] = item;
+        elements[size] = e;
         size++;
-        return item;
+        return e;
     }
 
     @Override
@@ -65,5 +65,15 @@ public class ArrayStack<E> implements Stack<E> {
             doubleStack[i] = elements[i];
         }
         elements = doubleStack;
+    }
+
+    private boolean contains(E e) {
+        for (int i = 0; i < size; i++) {
+            if (elements[i].equals(e)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
