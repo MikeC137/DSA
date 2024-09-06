@@ -49,7 +49,11 @@ public class ArrayStack<E> implements Stack<E> {
         throw new UnsupportedOperationException("Unimplemented method 'iterator'");
     }
 
-    // private void grow(){
-
-    // }
+    private void grow() {
+        E[] doubleStack = (E[]) new Object[2 * size];
+        for (int i = 0; i < elements.length; i++) {
+            doubleStack[i] = elements[i];
+        }
+        elements = doubleStack;
+    }
 }
