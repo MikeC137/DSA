@@ -23,4 +23,13 @@ ALGORITHMS OF EACH OPERATION IN ARRAY-BASED STACK
     d. Return the top element
     Time Complexity: O(1)
     Amortized Time Complexity: O(1)
-   
+
+4. int search(Object o)
+    a. Check if the stack contains our element. If it doesn't, return -1
+    b. Iterate over the stack from the top to the bottom, checking if each element matches
+    the specified object
+    current  index.
+    c. If the element is found, return the 1-based position from the top of the stack
+    (size - current index)
+    Time Complexity: O(n)
+    Amortized Time Complexity: O(n)
