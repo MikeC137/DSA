@@ -1,7 +1,6 @@
 import java.util.Iterator;
 
 public interface Stack<E> extends Iterable {
-
     public E push(E item);
 
     public E peek();
