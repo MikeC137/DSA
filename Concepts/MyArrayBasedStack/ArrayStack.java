@@ -22,7 +22,7 @@ public class ArrayStack<E> implements Stack<E> {
 
     @Override
     public E peek() {
-        if (isEmpty()) {
+        if (empty()) {
             throw new EmptyStackException();
         }
         return elements[size - 1];
@@ -42,8 +42,7 @@ public class ArrayStack<E> implements Stack<E> {
 
     @Override
     public boolean empty() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'empty'");
+        return size == 0;
     }
 
     @Override
