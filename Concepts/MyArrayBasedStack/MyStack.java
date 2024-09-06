@@ -11,8 +11,12 @@ public class MyStack<E> implements Stack<E> {
 
     @Override
     public E push(E item) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'push'");
+        if (size == elements.length) {
+            grow();
+        }
+        elements[size] = item;
+        size++;
+        return item;
     }
 
     @Override
@@ -45,4 +49,7 @@ public class MyStack<E> implements Stack<E> {
         throw new UnsupportedOperationException("Unimplemented method 'iterator'");
     }
 
+    // private void grow(){
+
+    // }
 }
