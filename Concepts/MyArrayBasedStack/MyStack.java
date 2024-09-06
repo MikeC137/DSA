@@ -1,6 +1,13 @@
 import java.util.Iterator;
 
 public class MyStack<E> implements Stack<E> {
+    private E[] elements;
+    private int size = 0;
+    private static final int DEFAULT_CAPACITY = 10;
+
+    public MyStack() {
+        elements = (E[]) new Object[DEFAULT_CAPACITY];
+    }
 
     @Override
     public E push(E item) {
