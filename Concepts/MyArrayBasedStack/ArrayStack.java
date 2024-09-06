@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.EmptyStackException;
 
 public class ArrayStack<E> implements Stack<E> {
     private E[] elements;
@@ -21,8 +22,10 @@ public class ArrayStack<E> implements Stack<E> {
 
     @Override
     public E peek() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'peek'");
+        if (isEmpty()) {
+            throw new EmptyStackException();
+        }
+        return elements[size - 1];
     }
 
     @Override
