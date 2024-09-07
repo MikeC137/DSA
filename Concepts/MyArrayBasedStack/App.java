@@ -24,5 +24,8 @@ public class App {
         System.out.println(timPosition);
 
         // Test boolean empty()
+        System.out.println(stack.empty());
+        stack.clear();
+        System.out.println(stack.empty());
     }
 }
