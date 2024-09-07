@@ -1,5 +1,6 @@
 import java.util.EmptyStackException;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class LinkedListStack<E> implements Stack<E> {
     private Node<E> top;
@@ -72,7 +73,24 @@ public class LinkedListStack<E> implements Stack<E> {
 
     @Override
     public Iterator<E> iterator() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'iterator'");
+        return new Iterator<E>() {
+            private Node<E> current = top;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public E next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+
+                E data = current.data;
+                current = current.next;
+                return data;
+            }
+        };
     }
 }
