@@ -34,8 +34,16 @@ public class LinkedListStack<E> implements Stack<E> {
 
     @Override
     public E pop() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'pop'");
+        if (empty()) {
+            throw new EmptyStackException();
+        }
+
+        E removedElement = top.data;
+
+        top = top.next;
+        size--;
+
+        return removedElement;
     }
 
     @Override
