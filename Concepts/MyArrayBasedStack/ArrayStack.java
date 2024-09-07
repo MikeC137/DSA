@@ -80,6 +80,13 @@ public class ArrayStack<E> implements Stack<E> {
         };
     }
 
+    public void clear() {
+        for (int i = 0; i < size; i++) {
+            elements[i] = null;
+        }
+        size = 0;
+    }
+
     private void grow() {
         E[] doubleStack = (E[]) new Object[2 * size];
         for (int i = 0; i < elements.length; i++) {

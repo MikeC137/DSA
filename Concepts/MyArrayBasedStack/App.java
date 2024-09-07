@@ -22,5 +22,7 @@ public class App {
         int timPosition = stack.search("Tim");
         System.out.println(mikePosition);
         System.out.println(timPosition);
+
+        // Test boolean empty()
     }
 }
