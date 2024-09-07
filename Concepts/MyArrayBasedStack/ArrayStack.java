@@ -43,9 +43,13 @@ public class ArrayStack<E> implements Stack<E> {
     }
 
     @Override
-    public int search(Object o) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'search'");
+    public int search(E e) {
+        for (int i = size - 1; i >= 0; i--) {
+            if (elements[i] == e) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
@@ -67,13 +71,4 @@ public class ArrayStack<E> implements Stack<E> {
         elements = doubleStack;
     }
 
-    private boolean contains(E e) {
-        for (int i = 0; i < size; i++) {
-            if (elements[i].equals(e)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
 }
