@@ -46,8 +46,7 @@ public class LinkedListStack<E> implements Stack<E> {
 
     @Override
     public boolean empty() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'emoty'");
+        return size == 0;
     }
 
     @Override
