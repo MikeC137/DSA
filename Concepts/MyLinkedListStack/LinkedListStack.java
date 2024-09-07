@@ -91,6 +91,29 @@ public class LinkedListStack<E> implements Stack<E> {
                 current = current.next;
                 return data;
             }
+
+            @Override
+            public String toString() {
+                if (empty()) {
+                    throw new EmptyStackException();
+                }
+
+                StringBuilder sb = new StringBuilder();
+                Node<E> current = top;
+
+                sb.append("[");
+                while (current != null) {
+                    sb.append(current.data);
+                    if (current.next != null) {
+                        sb.append(", ");
+                    }
+
+                    current = current.next;
+                }
+
+                sb.append("]");
+                return sb.toString();
+            }
         };
     }
 }
