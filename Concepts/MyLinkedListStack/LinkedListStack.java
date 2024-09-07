@@ -48,8 +48,21 @@ public class LinkedListStack<E> implements Stack<E> {
 
     @Override
     public int search(E e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'search'");
+        if (empty()) {
+            throw new EmptyStackException();
+        }
+
+        Node<E> current = top;
+        int index = 0;
+        while (current != null) {
+            if (current.data.equals(e)) {
+                return size - 1 - index;
+            }
+            current = current.next;
+            index++;
+        }
+
+        return -1;
     }
 
     @Override
