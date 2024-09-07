@@ -1,3 +1,4 @@
+import java.util.EmptyStackException;
 import java.util.Iterator;
 
 public class LinkedListStack<E> implements Stack<E> {
@@ -25,8 +26,10 @@ public class LinkedListStack<E> implements Stack<E> {
 
     @Override
     public E peek() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'peek'");
+        if (empty()) {
+            throw new EmptyStackException();
+        }
+        return top.data;
     }
 
     @Override
@@ -42,7 +45,7 @@ public class LinkedListStack<E> implements Stack<E> {
     }
 
     @Override
-    public boolean emoty() {
+    public boolean empty() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'emoty'");
     }

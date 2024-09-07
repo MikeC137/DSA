@@ -9,7 +9,7 @@ public interface Stack<E> extends Iterable {
 
     public int search(E e);
 
-    public boolean emoty();
+    public boolean empty();
 
     public Iterator<E> iterator();
 }
