@@ -1,5 +1,6 @@
 import java.util.Iterator;
 import java.util.EmptyStackException;
+import java.util.NoSuchElementException;
 
 public class ArrayStack<E> implements Stack<E> {
     private E[] elements;
@@ -59,8 +60,24 @@ public class ArrayStack<E> implements Stack<E> {
 
     @Override
     public Iterator<E> iterator() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'iterator'");
+        return new Iterator<E>() {
+            private int currentIndex = size - 1;
+
+            @Override
+            public boolean hasNext() {
+                return currentIndex >= 0;
+            }
+
+            @Override
+            public E next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+
+                return elements[currentIndex--];
+            }
+
+        };
     }
 
     private void grow() {
