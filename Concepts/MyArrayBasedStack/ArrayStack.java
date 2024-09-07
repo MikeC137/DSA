@@ -88,4 +88,19 @@ public class ArrayStack<E> implements Stack<E> {
         elements = doubleStack;
     }
 
+    @Override
+    public String toString() {
+        if (empty()) {
+            return "[]";
+        }
+        StringBuilder sb = new StringBuilder("[");
+        for (int i = 0; i < size; i++) {
+            sb.append(elements[i]);
+            if (i < size - 1) {
+                sb.append(", ");
+            }
+        }
+        sb.append("]");
+        return sb.toString();
+    }
 }
