@@ -17,15 +17,15 @@ public class App {
         System.out.println(stack.pop().toString());
         System.out.println(stack.toString());
 
-        // // Test int search(E e)
-        // int mikePosition = stack.search("Mike");
-        // int timPosition = stack.search("Tim");
-        // System.out.println(mikePosition);
-        // System.out.println(timPosition);
+        // Test int search(E e)
+        int mikePosition = stack.search("Mike");
+        int timPosition = stack.search("Tim");
+        System.out.println(mikePosition);
+        System.out.println(timPosition);
 
-        // // Test boolean empty()
-        // System.out.println(stack.empty());
-        // stack.clear();
-        // System.out.println(stack.empty());
+        // Test boolean empty()
+        System.out.println(stack.empty());
+        stack.clear();
+        System.out.println(stack.empty());
     }
 }
