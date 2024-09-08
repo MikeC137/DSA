@@ -13,9 +13,9 @@ public class App {
         // // Test E peek()
         System.out.println(stack.peek().toString());
 
-        // // Test E pop()
-        // System.out.println(stack.pop().toString());
-        // System.out.println(stack.toString());
+        // Test E pop()
+        System.out.println(stack.pop().toString());
+        System.out.println(stack.toString());
 
         // // Test int search(E e)
         // int mikePosition = stack.search("Mike");

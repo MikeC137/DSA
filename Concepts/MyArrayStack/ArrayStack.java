@@ -38,8 +38,12 @@ public class ArrayStack<E> implements Stack<E> {
             throw new EmptyStackException();
         }
 
-        E topElement = elements[size - 1];
-        elements[size - 1] = null;
+        E topElement = elements[0];
+        elements[0] = null;
+
+        for (int i = 1; i < size; i++) {
+            elements[i - 1] = elements[i];
+        }
 
         size--;
 
