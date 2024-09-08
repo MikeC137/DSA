@@ -1,0 +1,14 @@
+ADVANTAGES:
+Dynamic Size: The stack can grow and shrink dynamically without needing to resize an underlying
+array. No wasted space since you only allocate memory as needed.
+
+Memory Efficiency: No need to worry about array resizing, and it can handle large numbers of 
+elements without any additional overhead.
+
+
+DISADVANTAGES:
+Memory Overhead: Each element requires additional memory to store the reference (or pointer) 
+to the next node.
+
+Performance: Access time might be slightly slower than an array-based stack due to the 
+overhead of managing pointers and the linked list structure, though operations are still O(1).
