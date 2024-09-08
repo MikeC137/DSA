@@ -29,7 +29,7 @@ public class ArrayStack<E> implements Stack<E> {
         if (empty()) {
             throw new EmptyStackException();
         }
-        return elements[size - 1];
+        return elements[0];
     }
 
     @Override

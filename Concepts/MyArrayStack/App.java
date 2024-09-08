@@ -11,7 +11,7 @@ public class App {
         System.out.println(stack.toString());
 
         // // Test E peek()
-        // System.out.println(stack.peek().toString());
+        System.out.println(stack.peek().toString());
 
         // // Test E pop()
         // System.out.println(stack.pop().toString());
