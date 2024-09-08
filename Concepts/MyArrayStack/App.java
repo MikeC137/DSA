@@ -10,22 +10,22 @@ public class App {
         stack.push("Ethan");
         System.out.println(stack.toString());
 
-        // Test E peek()
-        System.out.println(stack.peek().toString());
+        // // Test E peek()
+        // System.out.println(stack.peek().toString());
 
-        // Test E pop()
-        System.out.println(stack.pop().toString());
-        System.out.println(stack.toString());
+        // // Test E pop()
+        // System.out.println(stack.pop().toString());
+        // System.out.println(stack.toString());
 
-        // Test int search(E e)
-        int mikePosition = stack.search("Mike");
-        int timPosition = stack.search("Tim");
-        System.out.println(mikePosition);
-        System.out.println(timPosition);
+        // // Test int search(E e)
+        // int mikePosition = stack.search("Mike");
+        // int timPosition = stack.search("Tim");
+        // System.out.println(mikePosition);
+        // System.out.println(timPosition);
 
-        // Test boolean empty()
-        System.out.println(stack.empty());
-        stack.clear();
-        System.out.println(stack.empty());
+        // // Test boolean empty()
+        // System.out.println(stack.empty());
+        // stack.clear();
+        // System.out.println(stack.empty());
     }
 }

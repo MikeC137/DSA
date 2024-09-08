@@ -16,7 +16,10 @@ public class ArrayStack<E> implements Stack<E> {
         if (size == elements.length) {
             grow();
         }
-        elements[size] = e;
+        for (int i = size - 1; i >= 0; i--) {
+            elements[i + 1] = elements[i];
+        }
+        elements[0] = e;
         size++;
         return e;
     }
