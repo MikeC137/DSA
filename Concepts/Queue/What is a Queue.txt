@@ -1,0 +1,33 @@
+In Java, the Queue interface is part of the java.util package and represents a collection 
+designed for holding elements prior to processing.
+
+A queue is a collection that follows the First-In-First-Out (FIFO) principle. Elements are 
+added to the end (rear) of the queue and removed from the front. This is similar to a queue 
+in real life, like a line at a checkout counter.
+
+KEY METHODS:
+add(E e): Inserts the specified element into the queue. Throws an IllegalStateException if the 
+queue is full.
+
+offer(E e): Inserts the specified element into the queue. Returns true if successful, false 
+otherwise. It doesn't throw an exception.
+
+remove(): Retrieves and removes the head of the queue. Throws NoSuchElementException if the 
+queue is empty.
+
+poll(): Retrieves and removes the head of the queue, or returns null if the queue is empty.
+
+peek(): Retrieves, but does not remove, the head of the queue. Returns null if the queue is 
+empty.
+
+element(): Retrieves, but does not remove, the head of the queue. Throws NoSuchElementException
+if the queue is empty.
+
+
+WHEN TO USE QUEUES 
+Queues are useful when you need to process elements in the order they were added. 
+They are commonly used in scenarios like:
+
+Task Scheduling: Managing tasks or jobs to be processed in order.
+Breadth-First Search: In graph traversal algorithms.
+Buffering: Handling data between producers and consumers, like in IO operations.
