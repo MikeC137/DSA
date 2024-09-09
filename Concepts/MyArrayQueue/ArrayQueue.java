@@ -25,8 +25,13 @@ public class ArrayQueue<E> implements Queue<E> {
 
     @Override
     public boolean enqueue(E e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'enqueue'");
+        if (queue.length == INITIAL_CAPACITY) {
+            grow();
+        }
+        queue[rear] = e;
+        rear = (rear + 1) % queue.length;
+        size++;
+        return true;
     }
 
     @Override
