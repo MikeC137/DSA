@@ -46,4 +46,8 @@ public class ArrayQueue<E> implements Queue<E> {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'iterator'");
     }
+
+    public boolean empty() {
+        return size == 0;
+    }
 }
