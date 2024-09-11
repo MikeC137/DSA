@@ -36,8 +36,10 @@ public class ArrayQueue<E> implements Queue<E> {
 
     @Override
     public E peek() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'peek'");
+        if (empty()) {
+            return null;
+        }
+        return queue[front];
     }
 
     @Override
