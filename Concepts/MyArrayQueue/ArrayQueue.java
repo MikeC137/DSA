@@ -55,4 +55,17 @@ public class ArrayQueue<E> implements Queue<E> {
     public boolean empty() {
         return size == 0;
     }
+
+    private void grow() {
+        E[] newArray = (E[]) new Object[queue.length * 2];
+        for (int i = 0; i < size; i++) {
+            newArray[i] = queue[(front + i) % queue.length];
+        }
+
+        queue = newArray;
+
+        front = 0;
+
+        rear = size;
+    }
 }
