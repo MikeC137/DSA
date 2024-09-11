@@ -44,8 +44,18 @@ public class ArrayQueue<E> implements Queue<E> {
 
     @Override
     public E dequeue() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'dequeue'");
+        if (empty()) {
+            return null;
+        }
+
+        E topElement = queue[front];
+
+        queue[front] = null;
+
+        front = (front + 1) % queue.length;
+
+        size--;
+        return topElement;
     }
 
     @Override
