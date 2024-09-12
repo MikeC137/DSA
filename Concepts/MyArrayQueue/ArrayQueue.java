@@ -60,8 +60,22 @@ public class ArrayQueue<E> implements Queue<E> {
 
     @Override
     public Iterator iterator() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'iterator'");
+        return new Iterator<E>() {
+            private int currentIndex = front;
+            private int elementsProcessed = 0;
+
+            @Override
+            public boolean hasNext() {
+                return elementsProcessed < front;
+            }
+
+            @Override
+            public E next() {
+                // TODO Auto-generated method stub
+                throw new UnsupportedOperationException("Unimplemented method 'next'");
+            }
+
+        };
     }
 
     public boolean empty() {
