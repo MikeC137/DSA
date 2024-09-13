@@ -91,6 +91,30 @@ public class ArrayQueue<E> implements Queue<E> {
         return size == 0;
     }
 
+    @Override
+    public String toString() {
+        if (empty()) {
+            return "[]";
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+
+        int currentIndex = front;
+
+        for (int i = front; i < rear; i++) {
+            sb.append(queue[currentIndex]);
+            currentIndex = (currentIndex + 1) % queue.length;
+            if (i != size - 1) {
+                sb.append(", ");
+            }
+        }
+
+        sb.append("]");
+
+        return sb.toString();
+    }
+
     private void grow() {
         E[] newArray = (E[]) new Object[queue.length * 2];
         for (int i = 0; i < size; i++) {
