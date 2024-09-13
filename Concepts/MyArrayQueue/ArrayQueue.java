@@ -71,8 +71,17 @@ public class ArrayQueue<E> implements Queue<E> {
 
             @Override
             public E next() {
-                // TODO Auto-generated method stub
-                throw new UnsupportedOperationException("Unimplemented method 'next'");
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+
+                E currentElement = queue[currentIndex];
+
+                currentIndex = (currentIndex + 1) % queue.length;
+
+                elementsProcessed++;
+
+                return currentElement;
             }
 
         };
