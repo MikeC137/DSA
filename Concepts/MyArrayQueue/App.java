@@ -6,6 +6,14 @@ public class App {
         queue.enqueue("Mike");
         queue.enqueue("John");
         queue.enqueue("Harold");
+        queue.enqueue("Shawn");
+        queue.enqueue("Desmond");
+        System.out.println(queue.toString());
+
+        // // Test E dequeue()
+        queue.dequeue();
+        System.out.println(queue.toString());
+        queue.dequeue();
         System.out.println(queue.toString());
     }
 }

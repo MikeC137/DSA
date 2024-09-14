@@ -48,14 +48,12 @@ public class ArrayQueue<E> implements Queue<E> {
             return null;
         }
 
-        E topElement = queue[front];
-
-        queue[front] = null;
+        E element = queue[front];
 
         front = (front + 1) % queue.length;
 
         size--;
-        return topElement;
+        return element;
     }
 
     @Override
@@ -102,7 +100,7 @@ public class ArrayQueue<E> implements Queue<E> {
 
         int currentIndex = front;
 
-        for (int i = front; i < rear; i++) {
+        for (int i = 0; i < size; i++) {
             sb.append(queue[currentIndex]);
             currentIndex = (currentIndex + 1) % queue.length;
             if (i != size - 1) {
