@@ -31,5 +31,11 @@ public class App {
             System.out.println(iterator.hasNext());
             System.out.println(iterator.next());
         }
+
+        // Test void clear() and boolean empty()
+        System.out.println(queue.empty());
+        queue.clear();
+        System.out.println(queue);
+        System.out.println(queue.empty());
     }
 }
