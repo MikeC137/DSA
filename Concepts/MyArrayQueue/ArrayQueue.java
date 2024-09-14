@@ -9,7 +9,7 @@ public class ArrayQueue<E> implements Queue<E> {
     private int size;
 
     public ArrayQueue() {
-        E[] queueArray = (E[]) new Object[INITIAL_CAPACITY];
+        this.queue = (E[]) new Object[INITIAL_CAPACITY];
         front = 0;
         rear = 0;
         size = 0;
