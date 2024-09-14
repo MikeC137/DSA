@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 public class App {
     public static void main(String[] args) {
         ArrayQueue<String> queue = new ArrayQueue<>();
@@ -22,5 +24,12 @@ public class App {
 
         // Test E peek()
         System.out.println(queue.peek());
+
+        // Test boolean hasNext and E next()
+        Iterator<String> iterator = queue.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.hasNext());
+            System.out.println(iterator.next());
+        }
     }
 }
