@@ -10,10 +10,17 @@ public class App {
         queue.enqueue("Desmond");
         System.out.println(queue.toString());
 
-        // // Test E dequeue()
+        // Test E dequeue()
         queue.dequeue();
         System.out.println(queue.toString());
         queue.dequeue();
         System.out.println(queue.toString());
+        queue.enqueue("Tim");
+        System.out.println(queue.toString());
+        queue.dequeue();
+        System.out.println(queue.toString());
+
+        // Test E peek()
+        System.out.println(queue.peek());
     }
 }
