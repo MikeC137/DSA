@@ -85,6 +85,15 @@ public class ArrayQueue<E> implements Queue<E> {
         };
     }
 
+    public void clear() {
+        for (int i = front; i < size; i++) {
+            queue[(front + i) % queue.length] = null;
+        }
+        front = 0;
+        rear = 0;
+        size = 0;
+    }
+
     public boolean empty() {
         return size == 0;
     }
