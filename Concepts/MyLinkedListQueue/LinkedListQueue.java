@@ -1,4 +1,5 @@
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class LinkedListQueue<E> implements Queue<E> {
     private Node<E> front;
@@ -67,8 +68,32 @@ public class LinkedListQueue<E> implements Queue<E> {
     }
 
     @Override
-    public Iterator iterator() {
+    public Iterator<E> iterator() {
+        return new Iterator<E>() {
+            Node<E> current = front;
+
+            @Override
+            public boolean hasNext() {
+                return current == null;
+            }
+
+            @Override
+            public E next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+
+                E data = current.data;
+                current = current.next;
+                return data;
+            }
+
+        };
+    }
+
+    @Override
+    public String toString() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'iterator'");
+        return super.toString();
     }
 }
