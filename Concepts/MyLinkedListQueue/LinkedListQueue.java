@@ -93,7 +93,23 @@ public class LinkedListQueue<E> implements Queue<E> {
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return super.toString();
+        if (empty()) {
+            return "[]";
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+
+        Node<E> current = front;
+        while (current != null) {
+            sb.append(current.data);
+            current = current.next;
+
+            if (current != null) {
+                sb.append(", ");
+            }
+        }
+
+        sb.append("]");
+        return sb.toString();
     }
 }
