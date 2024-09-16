@@ -1,11 +1,13 @@
-public class LinkedListQueue<E> {
-    private Node<E> head;
-    private Node<E> tail;
+import java.util.Iterator;
+
+public class LinkedListQueue<E> implements Queue<E> {
+    private Node<E> front;
+    private Node<E> rear;
     private int size;
 
     public LinkedListQueue() {
-        head = null;
-        tail = null;
+        front = null;
+        rear = null;
         size = 0;
     }
 
@@ -19,5 +21,37 @@ public class LinkedListQueue<E> {
             next = null;
             previous = null;
         }
+    }
+
+    @Override
+    public boolean enqueue(E e) {
+        Node<E> newElement = new Node<>(e);
+        if (empty()) {
+            front = newElement;
+            rear = newElement;
+        } else {
+            rear.next = newElement;
+            rear = newElement;
+        }
+        size++;
+        return true;
+    }
+
+    @Override
+    public E peek() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'peek'");
+    }
+
+    @Override
+    public E dequeue() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'dequeue'");
+    }
+
+    @Override
+    public Iterator iterator() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'iterator'");
     }
 }
