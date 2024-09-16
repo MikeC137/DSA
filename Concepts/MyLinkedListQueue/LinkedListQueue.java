@@ -43,14 +43,27 @@ public class LinkedListQueue<E> implements Queue<E> {
 
     @Override
     public E peek() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'peek'");
+        if (empty()) {
+            return null;
+        }
+
+        return front.data;
     }
 
     @Override
     public E dequeue() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'dequeue'");
+        if (empty()) {
+            return null;
+        }
+        E firstElement = front.data;
+        front = front.next;
+        size--;
+
+        if (front == null) {
+            rear = null;
+        }
+
+        return firstElement;
     }
 
     @Override
