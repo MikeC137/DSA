@@ -37,6 +37,10 @@ public class LinkedListQueue<E> implements Queue<E> {
         return true;
     }
 
+    public boolean empty() {
+        return (size == 0);
+    }
+
     @Override
     public E peek() {
         // TODO Auto-generated method stub
