@@ -74,7 +74,7 @@ public class LinkedListQueue<E> implements Queue<E> {
 
             @Override
             public boolean hasNext() {
-                return current == null;
+                return current != null;
             }
 
             @Override

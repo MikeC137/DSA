@@ -1,3 +1,5 @@
+import java.util.Iterator;
+
 public class App {
     public static void main(String[] args) {
         LinkedListQueue<String> queue = new LinkedListQueue<>();
@@ -16,5 +18,10 @@ public class App {
         System.out.println(queue);
         System.out.println(queue.peek());
 
+        // Test Iterator iterator()
+        Iterator<String> iterator = queue.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
     }
 }
