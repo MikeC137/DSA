@@ -24,5 +24,9 @@ public class App {
             System.out.println(iterator.next());
         }
 
+        // Test void clear() and empty()
+        System.out.println(queue.empty());
+        queue.clear();
+        System.out.println(queue.empty());
     }
 }
