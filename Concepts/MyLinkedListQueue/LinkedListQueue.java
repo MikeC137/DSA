@@ -38,10 +38,6 @@ public class LinkedListQueue<E> implements Queue<E> {
         return true;
     }
 
-    public boolean empty() {
-        return (size == 0);
-    }
-
     @Override
     public E peek() {
         if (empty()) {
@@ -89,6 +85,16 @@ public class LinkedListQueue<E> implements Queue<E> {
             }
 
         };
+    }
+
+    public boolean empty() {
+        return (size == 0);
+    }
+
+    public void clear() {
+        front = null;
+        rear = null;
+        size = 0;
     }
 
     @Override
