@@ -10,5 +10,11 @@ public class App {
         queue.enqueue("Harold");
         System.out.println(queue);
 
+        // Test E peek() and E dequeue()
+        System.out.println(queue.peek());
+        queue.dequeue();
+        System.out.println(queue);
+        System.out.println(queue.peek());
+
     }
 }
