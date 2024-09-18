@@ -1,0 +1,14 @@
+Key Concepts of a Priority Queue
+
+Priority: Each element in the queue has a priority associated with it, which is used to 
+determine the order of removal.
+
+Max-priority queue: Elements with the highest priority are removed first.
+Min-priority queue: Elements with the lowest priority are removed first.
+
+Basic Operations:
+
+Insert (enqueue): Insert an element into the queue with a given priority.
+Extract (dequeue): Remove the element with the highest priority.
+Peek (front/top): Return (but do not remove) the element with the highest priority.
+IsEmpty: Check whether the queue is empty.
