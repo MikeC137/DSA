@@ -1,13 +1,13 @@
 import java.util.Iterator;
+import java.util.Comparator;
 
 public class MyPriorityQueue<E> implements Queue<E> {
     private Node<E> front;
-    private Node<E> rear;
+    private Comparator<E> comparator;
     private int size;
 
     public MyPriorityQueue() {
         front = null;
-        rear = null;
         size = 0;
     }
 
@@ -21,13 +21,39 @@ public class MyPriorityQueue<E> implements Queue<E> {
             next = null;
             previous = null;
         }
-
     }
 
     @Override
     public boolean enqueue(E e) {
+        Node<E> newNode = new Node<E>(e);
+        if (empty()) {
+            front = newNode;
+            return true;
+        }
+
+        Node<E> current = front;
+        Node<E> previous = null;
+
+        while (current != null && hasHigherPriority(current.data, e)) {
+            previous = current;
+            current = current.next;
+        }
+
+        if (previous == null) {
+            newNode.next = front;
+            front = newNode;
+        } else {
+            previous.next = newNode;
+            newNode.next = current;
+        }
+
+        size++;
+        return true;
+    }
+
+    private boolean empty() {
         // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'enqueue'");
+        throw new UnsupportedOperationException("Unimplemented method 'empty'");
     }
 
     @Override
