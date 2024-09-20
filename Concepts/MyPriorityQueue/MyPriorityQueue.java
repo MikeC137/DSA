@@ -52,8 +52,7 @@ public class MyPriorityQueue<E> implements Queue<E> {
     }
 
     private boolean empty() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'empty'");
+        return size == 0;
     }
 
     @Override
