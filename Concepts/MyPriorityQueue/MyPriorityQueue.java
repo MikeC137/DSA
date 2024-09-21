@@ -1,5 +1,6 @@
 import java.util.Iterator;
 import java.util.Comparator;
+import java.util.NoSuchElementException;
 
 public class MyPriorityQueue<E> implements Queue<E> {
     private Node<E> front;
@@ -77,9 +78,27 @@ public class MyPriorityQueue<E> implements Queue<E> {
     }
 
     @Override
-    public Iterator iterator() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'iterator'");
+    public Iterator<E> iterator() {
+        return new Iterator<E>() {
+            Node<E> current = front;
+
+            @Override
+            public boolean hasNext() {
+                return current != null;
+            }
+
+            @Override
+            public E next() {
+                if (!hasNext()) {
+                    throw new NoSuchElementException();
+                }
+
+                E data = current.data;
+                current = current.next;
+                return data;
+            }
+
+        };
     }
 
 }
