@@ -12,6 +12,7 @@ public class App {
         priorityQueue.enqueue("Matthew");
         System.out.println(priorityQueue.toString());
 
-        // Test
+        // Test E peek()
+        System.out.println(priorityQueue.peek());
     }
 }
