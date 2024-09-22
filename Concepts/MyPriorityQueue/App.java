@@ -14,5 +14,11 @@ public class App {
 
         // Test E peek()
         System.out.println(priorityQueue.peek());
+
+        // Test E dequeue()
+        priorityQueue.dequeue();
+        System.out.println(priorityQueue.toString());
+        priorityQueue.dequeue();
+        System.out.println(priorityQueue.toString());
     }
 }
