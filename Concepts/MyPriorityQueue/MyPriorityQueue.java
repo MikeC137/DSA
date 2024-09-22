@@ -7,8 +7,9 @@ public class MyPriorityQueue<E> implements Queue<E> {
     private Comparator<E> comparator;
     private int size;
 
-    public MyPriorityQueue() {
+    public MyPriorityQueue(Comparator<E> comparator) {
         front = null;
+        this.comparator = comparator;
         size = 0;
     }
 
@@ -27,6 +28,7 @@ public class MyPriorityQueue<E> implements Queue<E> {
         Node<E> newNode = new Node<E>(e);
         if (empty()) {
             front = newNode;
+            size++;
             return true;
         }
 
