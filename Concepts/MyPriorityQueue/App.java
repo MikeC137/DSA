@@ -27,5 +27,12 @@ public class App {
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
+
+        // Test boolean empty()
+        System.out.println(priorityQueue.empty());
+        priorityQueue.dequeue();
+        priorityQueue.dequeue();
+        priorityQueue.dequeue();
+        System.out.println(priorityQueue.empty());
     }
 }
