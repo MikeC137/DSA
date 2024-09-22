@@ -56,7 +56,7 @@ public class MyPriorityQueue<E> implements Queue<E> {
         return comparator.compare(data, e) < 0;
     }
 
-    private boolean empty() {
+    public boolean empty() {
         return size == 0;
     }
 

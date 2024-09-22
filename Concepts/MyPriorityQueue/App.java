@@ -11,5 +11,7 @@ public class App {
         priorityQueue.enqueue("Jesus");
         priorityQueue.enqueue("Matthew");
         System.out.println(priorityQueue.toString());
+
+        // Test
     }
 }
