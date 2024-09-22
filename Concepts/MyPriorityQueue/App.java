@@ -1,4 +1,5 @@
 import java.util.Comparator;
+import java.util.Iterator;
 
 public class App {
     public static void main(String[] args) {
@@ -20,5 +21,11 @@ public class App {
         System.out.println(priorityQueue.toString());
         priorityQueue.dequeue();
         System.out.println(priorityQueue.toString());
+
+        // Test Iterator iterator()
+        Iterator<String> iterator = priorityQueue.iterator();
+        while (iterator.hasNext()) {
+            System.out.println(iterator.next());
+        }
     }
 }
