@@ -1,0 +1,48 @@
+WHAT IS A HASH TABLE?
+A hash table stores data in an associative manner. It uses a hash function to compute an index 
+(called a hash code) into an array of buckets, from which the desired value can be found.
+
+Key: The data you want to store (like a person's name).
+
+Value: The data associated with the key (like their phone number).
+
+Hash Function: This function takes the key and converts it into an integer (hash code). This 
+integer determines where the value is stored in an array.
+
+HashMap CLASS
+In Java, the HashMap class is part of the java.util package. It implements the Map interface 
+and provides all the benefits of hash tables: constant time (O(1)) operations for insertion, 
+lookup, and deletion.
+
+HASHMAP INTERNAL MECHANISM
+
+When you call put(key, value):
+
+The hash function computes the hash code of the key.
+The hash code is mapped to an index in the internal array (known as a bucket).
+If there's no other key at that index, the key-value pair is stored.
+If there's already a key there (known as a collision), it will store the new key-value 
+pair using separate chaining (typically implemented as a linked list).
+
+When you call get(key):
+
+The hash function computes the hash code of the key.
+The index is calculated from the hash code.
+The value is retrieved from the array at that index.
+
+IMPORTANT METHODS
+put(K key, V value): Inserts a key-value pair.
+get(Object key): Returns the value associated with the key.
+remove(Object key): Removes the key-value pair.
+containsKey(Object key): Returns true if the map contains the specified key.
+containsValue(Object value): Returns true if the map contains the specified value.
+keySet(): Returns a set of all the keys.
+values(): Returns a collection of all the values.
+
+HANDLING COLLISIONS 
+Java's HashMap uses separate chaining to handle collisions, meaning that each bucket contains 
+a list of key-value pairs that share the same hash index.
+
+In Java 8, HashMap optimizes this further by using balanced trees (red-black trees) instead 
+of linked lists when the number of items in a bucket becomes large. This reduces the time 
+complexity for lookups from O(n) to O(log n) in the worst case.
